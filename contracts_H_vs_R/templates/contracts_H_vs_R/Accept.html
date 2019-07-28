@@ -1,0 +1,49 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+    Выбирите ответные действия на предложенный контракт
+{% endblock %}
+
+{% block content %}
+
+    <p> Вы  <strong> Участник 2 </strong>. Участник 1 предложил для вас контракт:</p>
+
+    <table class='table text-center' style='width: auto; margin: auto'>
+        <tr><th>Фиксированная выплата</th><th>Переменная выплата</th></tr>
+        <tr><td>
+            {% if group.gtype == group.swicher  %}
+                {{ group.agent_fixed_pay  }}
+            {% else %}
+                {{ group.robot_agent_offer_fixed_pay}}
+            {% endif %}
+
+        </td><td>
+            {% if group.gtype == group.swicher  %}
+                 {{ group.agent_piece_rate }}
+            {% else %}
+                {{ group.robot_agent_offer_piece_rate }}
+            {% endif %}
+        </td></tr>
+    </table>
+
+
+
+    {% formfield group.Hum_effort label='Пожалуйста выберите уровень затрачиваемых усилий' %}
+    </div>
+
+
+    <p>
+    {% next_button %}
+    </p>
+
+    {% include Constants.instructions_template %}
+
+{% endblock %}
+
+{% block scripts %}
+
+
+
+
+{% endblock %}

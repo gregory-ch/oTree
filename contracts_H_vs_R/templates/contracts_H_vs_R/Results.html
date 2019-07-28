@@ -1,0 +1,78 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+
+{% block title %}
+    Результаты раунда
+{% endblock %}
+
+{% block content %}
+
+	{% if group.gtype == group.swicher %}
+		<p>
+		{% if player.role == 'agent' %}
+			Компьютер выбрал значение удачи: {{ group.epsilon}}, выплаты по контракту составят:
+		{% else %}
+			Участник 2 принял свое решение, в результате  контракт включает в себя:
+		{% endif %}
+		<p>
+		<table class="table table-condensed" style="width:auto">
+			<tr>
+				<th>Фиксированная выплата</th>
+				<th>Переменная вылата</th>
+				<th>Результат от усилий и удачи </th>
+				<th>Ваш общий заработок составит</th>
+			</tr>
+			<tr>
+				<td>{{ group.agent_fixed_pay }}</td>
+				<td>{{ group.agent_piece_rate }}</td>
+				<td>{{group.eff_plus_eps}} </td>
+				<td>{{ group.total_return}}</td>
+			</tr>
+		</table>
+	{% else %}
+		<p>
+		{% if player.role == 'agent' %}
+			Компьютер выбрал значение удачи: {{ group.epsilon}}, выплаты по контракту составят:
+            <table class="table table-condensed" style="width:auto">
+			<tr>
+				<th>Фиксированная выплата</th>
+				<th>Переменная вылата</th>
+				<th>Результат от усилий и реализации случайной величины</th>
+				<th>Ваш общий заработок составит</th>
+			</tr>
+			<tr>
+				<td>{{ group.robot_agent_offer_fixed_pay }}</td>
+				<td>{{ group.robot_agent_offer_piece_rate}}</td>
+				<td>{{group.eff_plus_eps}} </td>
+				<td>{{ group.total_return_Hum_A_vs_robot}}</td>
+			</tr>
+		</table>
+		{% else %}
+			Участник 2 принял свое решение, в результате контракт включает в себя:
+            <table class="table table-condensed" style="width:auto">
+			<tr>
+				<th>Фиксированная выплата</th>
+				<th>Переменная вылата</th>
+				<th>Результат от усилий и удачи</th>
+				<th>Ваш общий заработок составит</th>
+			</tr>
+			<tr>
+				<td>{{ group.agent_fixed_pay }}</td>
+				<td>{{ group.agent_piece_rate }}</td>
+				<td>{{group.eff_plus_eps_r}} </td>
+				<td>{{ group.total_return_Hum_P_vs_robot}}</td>
+			</tr>
+		</table>
+		{% endif %}
+		</p>
+
+	{% endif %}
+
+	<p>Поэтому ваш выигрыш в данном раунде составит <strong>{{player.payoff}}</strong>.</p>
+
+    <p>{% next_button %}</p>
+
+    {% include Constants.instructions_template %}
+
+{% endblock %}
