@@ -1,5 +1,5 @@
 # Heroku requires Django to be explicitly in requirements file
 # in order to run collectstatic
-Django==1.8.8
+
 otree>=2.2.4
 

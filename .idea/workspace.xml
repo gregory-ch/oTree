@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="929e0447-8903-473a-bddd-2eff4496aa95" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requirements_base.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements_base.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -189,8 +188,7 @@
     <option name="totallyTimeSpent" value="118367000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1012" height="615" extended-state="7" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1012" height="615" extended-state="6" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21383648" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
