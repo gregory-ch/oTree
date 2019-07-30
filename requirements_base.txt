@@ -2,4 +2,5 @@
 # in order to run collectstatic
 
 otree>=2.2.4
+numpy 
 
