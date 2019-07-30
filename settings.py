@@ -24,16 +24,16 @@ SESSION_CONFIGS = [
         'num_demo_participants': 3,
         'app_sequence': ['guess_two_thirds', 'payment_info'],
     },
-    {
-        'name': 'survey',
-        'num_demo_participants': 1,
-        'app_sequence': ['survey', 'payment_info'],
-    },
-    {
-        'name': 'quiz',
-        'num_demo_participants': 1,
-        'app_sequence': ['quiz'],
-    },
+    # {
+    #     'name': 'survey',
+    #     'num_demo_participants': 1,
+    #     'app_sequence': ['survey', 'payment_info'],
+    # },
+    # {
+    #     'name': 'quiz',
+    #     'num_demo_participants': 1,
+    #     'app_sequence': ['quiz'],
+    # },
 
     # {
     # 'name': 'principal_agent',
@@ -47,12 +47,12 @@ SESSION_CONFIGS = [
     'num_demo_participants': 4,
     'app_sequence': ['mpl','contracts_H_vs_R','my_survey'],
     },
-{
-    'name': 'bret',
-    'display_name': "bret",
-    'num_demo_participants': 1,
-    'app_sequence': ['bret'],
-    },
+# {
+#     'name': 'bret',
+#     'display_name': "bret",
+#     'num_demo_participants': 1,
+#     'app_sequence': ['bret'],
+#     },
 
 #
 ]
