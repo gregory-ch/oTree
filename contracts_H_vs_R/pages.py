@@ -41,21 +41,21 @@ class quiz (Page):
     def task_4_error_message(self, value):
         print('value is', value)
         if value != '7':
-            self.player.numb_errors += 1
+            self.player.numb_errors = 1
             return 'пожалуйста проверьте правильность введнного ответа, поднимите руку после третьей' \
                    'попытки ввода неверного значения'
 
     def task_5_error_message(self, value):
         print('value is', value)
         if value != '437.5':
-            self.player.numb_errors += 1
+            self.player.numb_errors = 1
             return 'пожалуйста проверьте правильность введнного ответа, поднимите руку после третьей' \
                    'попытки ввода неверного значения'
 
     def task_6_error_message(self, value):
         print('value is', value)
         if value != 4:
-            self.player.numb_errors += 1
+            self.player.numb_errors = 1
             return 'пожалуйста проверьте правильность введнного ответа, поднимите руку после третьей' \
                    'попытки ввода неверного значения'
 
