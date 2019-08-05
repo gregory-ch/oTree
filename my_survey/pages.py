@@ -15,7 +15,10 @@ class Demographics(Page):
                    'experience',
                    'mark',
                    'loneliness',
-                   'trust'
+                   'trust',
+                   'feedback_1',
+                   'feedback_2',
+                   'feedback_3'
                    ]
 
     # def age_error_message(self, value):

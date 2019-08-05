@@ -46,6 +46,15 @@ class Player(BasePlayer):
         label='Ваш самый высокий уровень образования',
         widget=widgets.RadioSelect)
 
+    feedback_1 = models.StringField(
+        label='Было ли что-то непонятным для Вас в эксперименте, если да, укажите что')
+
+    feedback_2 = models.StringField(
+        label='Что по-вашему следует улучшить?')
+
+    feedback_3 = models.StringField(
+        label='О чем по вашему был этот эксперимент?')
+
     wage = models.IntegerField(
         label='Ваш средний месячный доход, 0 если неприменимо',
         min=0, max=150000)
