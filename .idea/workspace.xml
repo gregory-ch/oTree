@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="929e0447-8903-473a-bddd-2eff4496aa95" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/df" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_тест.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/contracts_H_vs_R/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/contracts_H_vs_R/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_survey/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_survey/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_survey/pages.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_survey/pages.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_survey/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_survey/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,11 +18,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/contracts_H_vs_R/tests.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="527">
-              <caret line="31" column="12" lean-forward="true" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="12" />
+              <caret line="31" selection-start-line="31" selection-end-line="31" />
               <folding>
                 <element signature="e#0#51#0" expanded="true" />
               </folding>
@@ -32,11 +30,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/contracts_H_vs_R/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="41">
-              <caret line="198" column="13" lean-forward="true" selection-start-line="198" selection-start-column="13" selection-end-line="198" selection-end-column="13" />
+            <state relative-caret-position="98">
+              <caret line="139" column="16" selection-start-line="139" selection-start-column="8" selection-end-line="139" selection-end-column="16" />
               <folding>
                 <element signature="e#0#134#0" expanded="true" />
               </folding>
@@ -47,7 +45,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/contracts_H_vs_R/pages.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
+            <state relative-caret-position="1717">
               <caret line="102" column="13" selection-start-line="102" selection-start-column="6" selection-end-line="102" selection-end-column="13" />
             </state>
           </provider>
@@ -145,20 +143,7 @@
             <path>
               <item name="oTree" type="b2602c69:ProjectViewProjectNode" />
               <item name="oTree" type="462c0819:PsiDirectoryNode" />
-              <item name="contracts_H_vs_R" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="oTree" type="b2602c69:ProjectViewProjectNode" />
-              <item name="oTree" type="462c0819:PsiDirectoryNode" />
-              <item name="contracts_H_vs_R" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="oTree" type="b2602c69:ProjectViewProjectNode" />
-              <item name="oTree" type="462c0819:PsiDirectoryNode" />
-              <item name="contracts_H_vs_R" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="contracts_H_vs_R" type="462c0819:PsiDirectoryNode" />
+              <item name="my_survey" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -218,15 +203,15 @@
       <workItem from="1563978158183" duration="1046000" />
       <workItem from="1564485361901" duration="1300000" />
       <workItem from="1564568455329" duration="453000" />
-      <workItem from="1564669376159" duration="12588000" />
+      <workItem from="1564669376159" duration="14196000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="131408000" />
+    <option name="totallyTimeSpent" value="133016000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1005" height="615" extended-state="7" />
+    <frame x="-7" y="-7" width="1005" height="615" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2375924" />
@@ -404,30 +389,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/my_survey/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="76" column="17" selection-start-line="76" selection-start-column="17" selection-end-line="76" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/my_survey/tests.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
           <caret line="47" column="34" lean-forward="true" selection-start-line="47" selection-start-column="34" selection-end-line="47" selection-end-column="34" />
           <folding>
             <element signature="e#0#51#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/my_survey/pages.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="52" column="40" selection-start-line="33" selection-start-column="20" selection-end-line="52" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#51#0" expanded="true" />
-            <marker date="1564979891035" expanded="true" signature="209:464" ph="..." />
           </folding>
         </state>
       </provider>
@@ -456,29 +423,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/contracts_H_vs_R/models.py">
+    <entry file="file://$PROJECT_DIR$/my_survey/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="41">
-          <caret line="198" column="13" lean-forward="true" selection-start-line="198" selection-start-column="13" selection-end-line="198" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#134#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="68">
+          <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/contracts_H_vs_R/pages.py">
+    <entry file="file://$PROJECT_DIR$/my_survey/pages.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="102" column="13" selection-start-line="102" selection-start-column="6" selection-end-line="102" selection-end-column="13" />
+        <state relative-caret-position="901">
+          <caret line="53" column="10" selection-start-line="53" selection-start-column="10" selection-end-line="53" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
+            <marker date="1564979891035" expanded="true" signature="209:464" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/contracts_H_vs_R/tests.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
-          <caret line="31" column="12" lean-forward="true" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="12" />
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
           <folding>
             <element signature="e#0#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/contracts_H_vs_R/pages.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1717">
+          <caret line="102" column="13" selection-start-line="102" selection-start-column="6" selection-end-line="102" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/contracts_H_vs_R/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="98">
+          <caret line="139" column="16" selection-start-line="139" selection-start-column="8" selection-end-line="139" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#134#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -29,5 +29,5 @@ class PlayerBot(Bot):
             yield (pages.Accept,
                    {'Hum_effort': 5,
                     })
-            
+
         yield (pages.Results)
