@@ -9,6 +9,7 @@ SESSION_CONFIG_DEFAULTS = {
     'real_world_currency_per_point': 1.00,
     'participation_fee': 150.00,
     'doc': "",
+
 }
 
 SESSION_CONFIGS = [
@@ -70,7 +71,13 @@ REAL_WORLD_CURRENCY_CODE = 'RUR'
 USE_POINTS = True
 POINTS_CUSTOM_NAME = 'токен'
 
+
+
+
 ROOMS = [
+
+    {'name': 'HSE',
+     'display_name': 'Lsh_workshop'},
     {
         'name': 'econ101',
         'display_name': 'Econ 101 class',
@@ -82,7 +89,7 @@ ROOMS = [
     },
 ]
 
-
+OTREE_PRODUCTION = True
 ADMIN_USERNAME = 'admin'
 # for security, best to set admin password in an environment variable
 ADMIN_PASSWORD = environ.get('OTREE_ADMIN_PASSWORD')

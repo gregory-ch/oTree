@@ -15,7 +15,7 @@ Your app description
 class Constants(BaseConstants):
     name_in_url = 'contracts_H_vs_R'
     players_per_group = 2
-    num_rounds = 2
+    num_rounds = 20
     instructions_template = 'contracts_H_vs_R/instructions.html'
 
     min_efforts = 0
@@ -43,7 +43,9 @@ class Constants(BaseConstants):
         7: 0.84197484,
         8: 1.25999558,
         9: 20.30937094,
-        10: 377}
+        10: 377,
+        11: 377
+    }
 
 
 
