@@ -23,7 +23,7 @@ class Player(BasePlayer):
 
     age = models.IntegerField(
         label='Ваш возраст',
-        min=15, max=65
+        min=11, max=65
     )
 
 

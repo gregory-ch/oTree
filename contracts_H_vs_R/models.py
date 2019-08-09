@@ -113,7 +113,7 @@ class Group(BaseGroup):
 
     epsilon = models.FloatField()  # - random variable computation, нужно не забыть ограничить
     def randome_move_solver(self):
-        self.epsilon = random.normalvariate(Constants.mu, Constants.sigma)
+        self.epsilon = round( random.normalvariate(Constants.mu, Constants.sigma),2)
 
     # starts payoff calculation
 
@@ -125,7 +125,7 @@ class Group(BaseGroup):
             self.swicher = 'HH'
         if self.gtype != self.swicher:
             if agent.risk_coeff > 0.521:
-                self.robot_agent_offer_piece_rate = Constants.s/(1+agent.risk_coeff *(Constants.sigma**2))
+                self.robot_agent_offer_piece_rate = round( Constants.s/(1+agent.risk_coeff *(Constants.sigma**2)),2)
                 self.robot_agent_offer_fixed_pay = round( 1 - (self.robot_agent_offer_piece_rate**2)/2 + agent.risk_coeff*(self.robot_agent_offer_piece_rate**2)*(Constants.sigma**2)/2, 2)
             else:
                 self.robot_agent_offer_piece_rate = 5
@@ -203,7 +203,7 @@ class Player(BasePlayer):
 
     task_1 = models.StringField(
         label='Задание 1. Во втором этапе Участник 2 выбрал уровень усилий 2,5  на шаге 2. '
-              'На шаге 3 компьютер посчитал значение удачи, оно составило  1,5. '
+              'На шаге 3 компьютер посчитал значение Случайного фактора, оно составило  1,5. '
               'Каков будет общий заработок обоих участников?')
     task_2 = models.StringField(
         label='Задание 2. Во втором этапе  Участник 1 на шаге 1 в первом раунде предложил фиксированную часть вознаграждения'
