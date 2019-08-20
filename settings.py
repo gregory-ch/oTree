@@ -42,6 +42,13 @@ SESSION_CONFIGS = [
     # 'num_demo_participants': 2,
     # 'app_sequence': ['principal_agent', 'payment_info'],
     # },
+	
+{
+        'name': 'color_table',
+        'display_name': "color_table",
+        'num_demo_participants': 10,
+        'app_sequence': ['color_table']
+    },
 {
     'name': 'Contracts_H_VS_R',
     'display_name': "Contracts_H_VS_R",

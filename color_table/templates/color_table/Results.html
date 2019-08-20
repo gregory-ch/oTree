@@ -1,0 +1,193 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Цветовой тест
+{% endblock %}
+
+{% block content %}
+    {{ player.x}}
+    <!--<p>-->
+
+    {{z}}
+    <!--{{z.0}}-->
+    <!--</p>-->
+    <style type="text/css">
+
+    .tftable {font-size:12px;color:#333333;width:100%;border-width: 1px;border-color: #bcaf91;border-collapse: collapse;}
+    .tftable tr {;}
+    .tftable td {;font-size:12px;border-width: 5px;padding: 54px;border-style: solid;border-color: #ffffff;}
+    .tftable tr:hover {background-color:#ffffff;}
+    <!---->
+    <!--bgcolor="rgb(183, {{player.x}}, 255)"-->
+    </style>
+    СРАВНИТЕ ДАННЫЙ  ЦВЕТ
+    <table class="tftable">
+      <tr>  <td style="background-color:rgb(100,{{player.x}},255)"> </td> </tr>
+        </table>
+    С ОДНИМ ИЗ ЦВEТОВ В ТАБЛИЦЕ НИЖЕ (ОДИН ИЗ НИХ ИДЕНТИЧЕН, ОСТАЛЬНЫЕ ОТЛИЧАЮТСЯ)
+
+    <!--комментарий: выбор таблиц по условию-->
+
+    {% if player.num_square == 1 %}
+
+        <table class="tftable">
+        <tr ><td style="background-color:rgb(100,{{player.x}},255)"> </td ><td style="background-color:rgb(100,{{z.1}},255)"> </td><td style="background-color:rgb(100,{{z.2}},255)"> </td><td style="background-color:rgb(100,{{z.3}},255)"> </td></tr>
+        <tr><td style="background-color:rgb(100,{{z.4}},255)"> </td><td style="background-color:rgb(100,{{z.5}},255)"> </td><td style="background-color:rgb(100,{{z.6}},255)"> </td><td style="background-color:rgb(100,{{z.7}},255)"> </td></tr>
+        <tr><td style="background-color:rgb(100,{{z.8}},255)"> </td><td style="background-color:rgb(100,{{z.9}},255)"> </td><td style="background-color:rgb(100,{{z.10}},255)"> </td><td style="background-color:rgb(100,{{z.11}},255)"> </td></tr>
+        <tr><td style="background-color:rgb(100,{{z.12}},255)"> </td><td style="background-color:rgb(100,{{z.13}},255)"> </td><td style="background-color:rgb(100,{{z.14}},255)"> </td><td style="background-color:rgb(100,{{z.15}},255)"> </td></tr></table>
+
+        </table>
+
+    {% elif player.num_square == 2 %}
+
+        <table class="tftable">
+        <tr ><td style="background-color:rgb(100,{{z.0}},255)"> </td ><td style="background-color:rgb(100,{{player.x}},255)"> </td><td style="background-color:rgb(100,{{z.2}},255)"> </td><td style="background-color:rgb(100,{{z.3}},255)"> </td></tr>
+        <tr><td style="background-color:rgb(100,{{z.4}},255)"> </td><td style="background-color:rgb(100,{{z.5}},255)"> </td><td style="background-color:rgb(100,{{z.6}},255)"> </td><td style="background-color:rgb(100,{{z.7}},255)"> </td></tr>
+        <tr><td style="background-color:rgb(100,{{z.8}},255)"> </td><td style="background-color:rgb(100,{{z.9}},255)"> </td><td style="background-color:rgb(100,{{z.10}},255)"> </td><td style="background-color:rgb(100,{{z.11}},255)"> </td></tr>
+        <tr><td style="background-color:rgb(100,{{z.12}},255)"> </td><td style="background-color:rgb(100,{{z.13}},255)"> </td><td style="background-color:rgb(100,{{z.14}},255)"> </td><td style="background-color:rgb(100,{{z.15}},255)"> </td></tr></table>
+
+        </table>
+    {% elif player.num_square == 3 %}
+
+        <table class="tftable">
+        <tr ><td style="background-color:rgb(100,{{z.0}},255)"> </td ><td style="background-color:rgb(100,{{z.1}},255)"> </td><td style="background-color:rgb(100,{{player.x}},255)"> </td><td style="background-color:rgb(100,{{z.3}},255)"> </td></tr>
+        <tr><td style="background-color:rgb(100,{{z.4}},255)"> </td><td style="background-color:rgb(100,{{z.5}},255)"> </td><td style="background-color:rgb(100,{{z.6}},255)"> </td><td style="background-color:rgb(100,{{z.7}},255)"> </td></tr>
+        <tr><td style="background-color:rgb(100,{{z.8}},255)"> </td><td style="background-color:rgb(100,{{z.9}},255)"> </td><td style="background-color:rgb(100,{{z.10}},255)"> </td><td style="background-color:rgb(100,{{z.11}},255)"> </td></tr>
+        <tr><td style="background-color:rgb(100,{{z.12}},255)"> </td><td style="background-color:rgb(100,{{z.13}},255)"> </td><td style="background-color:rgb(100,{{z.14}},255)"> </td><td style="background-color:rgb(100,{{z.15}},255)"> </td></tr></table>
+
+        </table>
+    {% elif player.num_square == 4 %}
+
+        <table class="tftable">
+        <tr ><td style="background-color:rgb(100,{{z.0}},255)"> </td ><td style="background-color:rgb(100,{{z.1}},255)"> </td><td style="background-color:rgb(100,{{z.2}},255)"> </td><td style="background-color:rgb(100,{{player.x}},255)"> </td></tr>
+        <tr><td style="background-color:rgb(100,{{z.4}},255)"> </td><td style="background-color:rgb(100,{{z.5}},255)"> </td><td style="background-color:rgb(100,{{z.6}},255)"> </td><td style="background-color:rgb(100,{{z.7}},255)"> </td></tr>
+        <tr><td style="background-color:rgb(100,{{z.8}},255)"> </td><td style="background-color:rgb(100,{{z.9}},255)"> </td><td style="background-color:rgb(100,{{z.10}},255)"> </td><td style="background-color:rgb(100,{{z.11}},255)"> </td></tr>
+        <tr><td style="background-color:rgb(100,{{z.12}},255)"> </td><td style="background-color:rgb(100,{{z.13}},255)"> </td><td style="background-color:rgb(100,{{z.14}},255)"> </td><td style="background-color:rgb(100,{{z.15}},255)"> </td></tr></table>
+
+        </table>
+    {% elif player.num_square == 5 %}
+
+        <table class="tftable">
+        <tr ><td style="background-color:rgb(100,{{z.0}},255)"> </td ><td style="background-color:rgb(100,{{z.1}},255)"> </td><td style="background-color:rgb(100,{{z.2}},255)"> </td><td style="background-color:rgb(100,{{z.3}},255)"> </td></tr>
+        <tr><td style="background-color:rgb(100,{{player.x}},255)"> </td><td style="background-color:rgb(100,{{z.5}},255)"> </td><td style="background-color:rgb(100,{{z.6}},255)"> </td><td style="background-color:rgb(100,{{z.7}},255)"> </td></tr>
+        <tr><td style="background-color:rgb(100,{{z.8}},255)"> </td><td style="background-color:rgb(100,{{z.9}},255)"> </td><td style="background-color:rgb(100,{{z.10}},255)"> </td><td style="background-color:rgb(100,{{z.11}},255)"> </td></tr>
+        <tr><td style="background-color:rgb(100,{{z.12}},255)"> </td><td style="background-color:rgb(100,{{z.13}},255)"> </td><td style="background-color:rgb(100,{{z.14}},255)"> </td><td style="background-color:rgb(100,{{z.15}},255)"> </td></tr></table>
+
+        </table>
+    {% elif player.num_square == 6 %}
+
+        <table class="tftable">
+        <tr ><td style="background-color:rgb(100,{{z.0}},255)"> </td ><td style="background-color:rgb(100,{{z.1}},255)"> </td><td style="background-color:rgb(100,{{z.2}},255)"> </td><td style="background-color:rgb(100,{{z.3}},255)"> </td></tr>
+        <tr><td style="background-color:rgb(100,{{z.4}},255)"> </td><td style="background-color:rgb(100,{{player.x}},255)"> </td><td style="background-color:rgb(100,{{z.6}},255)"> </td><td style="background-color:rgb(100,{{z.7}},255)"> </td></tr>
+        <tr><td style="background-color:rgb(100,{{z.8}},255)"> </td><td style="background-color:rgb(100,{{z.9}},255)"> </td><td style="background-color:rgb(100,{{z.10}},255)"> </td><td style="background-color:rgb(100,{{z.11}},255)"> </td></tr>
+        <tr><td style="background-color:rgb(100,{{z.12}},255)"> </td><td style="background-color:rgb(100,{{z.13}},255)"> </td><td style="background-color:rgb(100,{{z.14}},255)"> </td><td style="background-color:rgb(100,{{z.15}},255)"> </td></tr></table>
+
+        </table>
+    {% elif player.num_square == 7 %}
+
+        <table class="tftable">
+        <tr ><td style="background-color:rgb(100,{{z.0}},255)"> </td ><td style="background-color:rgb(100,{{z.1}},255)"> </td><td style="background-color:rgb(100,{{z.2}},255)"> </td><td style="background-color:rgb(100,{{z.3}},255)"> </td></tr>
+        <tr><td style="background-color:rgb(100,{{z.4}},255)"> </td><td style="background-color:rgb(100,{{z.5}},255)"> </td><td style="background-color:rgb(100,{{player.x}},255)"> </td><td style="background-color:rgb(100,{{z.7}},255)"> </td></tr>
+        <tr><td style="background-color:rgb(100,{{z.8}},255)"> </td><td style="background-color:rgb(100,{{z.9}},255)"> </td><td style="background-color:rgb(100,{{z.10}},255)"> </td><td style="background-color:rgb(100,{{z.11}},255)"> </td></tr>
+        <tr><td style="background-color:rgb(100,{{z.12}},255)"> </td><td style="background-color:rgb(100,{{z.13}},255)"> </td><td style="background-color:rgb(100,{{z.14}},255)"> </td><td style="background-color:rgb(100,{{z.15}},255)"> </td></tr></table>
+
+        </table>
+    {% elif player.num_square == 8 %}
+
+        <table class="tftable">
+        <tr ><td style="background-color:rgb(100,{{z.0}},255)"> </td ><td style="background-color:rgb(100,{{z.1}},255)"> </td><td style="background-color:rgb(100,{{z.2}},255)"> </td><td style="background-color:rgb(100,{{z.3}},255)"> </td></tr>
+        <tr><td style="background-color:rgb(100,{{z.4}},255)"> </td><td style="background-color:rgb(100,{{z.5}},255)"> </td><td style="background-color:rgb(100,{{z.6}},255)"> </td><td style="background-color:rgb(100,{{player.x}},255)"> </td></tr>
+        <tr><td style="background-color:rgb(100,{{z.8}},255)"> </td><td style="background-color:rgb(100,{{z.9}},255)"> </td><td style="background-color:rgb(100,{{z.10}},255)"> </td><td style="background-color:rgb(100,{{z.11}},255)"> </td></tr>
+        <tr><td style="background-color:rgb(100,{{z.12}},255)"> </td><td style="background-color:rgb(100,{{z.13}},255)"> </td><td style="background-color:rgb(100,{{z.14}},255)"> </td><td style="background-color:rgb(100,{{z.15}},255)"> </td></tr></table>
+
+        </table>
+    {% elif player.num_square == 9 %}
+
+        <table class="tftable">
+        <tr ><td style="background-color:rgb(100,{{z.0}},255)"> </td ><td style="background-color:rgb(100,{{z.1}},255)"> </td><td style="background-color:rgb(100,{{z.2}},255)"> </td><td style="background-color:rgb(100,{{z.3}},255)"> </td></tr>
+        <tr><td style="background-color:rgb(100,{{z.4}},255)"> </td><td style="background-color:rgb(100,{{z.5}},255)"> </td><td style="background-color:rgb(100,{{z.6}},255)"> </td><td style="background-color:rgb(100,{{z.7}},255)"> </td></tr>
+        <tr><td style="background-color:rgb(100,{{player.x}},255)"> </td><td style="background-color:rgb(100,{{z.9}},255)"> </td><td style="background-color:rgb(100,{{z.10}},255)"> </td><td style="background-color:rgb(100,{{z.11}},255)"> </td></tr>
+        <tr><td style="background-color:rgb(100,{{z.12}},255)"> </td><td style="background-color:rgb(100,{{z.13}},255)"> </td><td style="background-color:rgb(100,{{z.14}},255)"> </td><td style="background-color:rgb(100,{{z.15}},255)"> </td></tr></table>
+
+        </table>
+    {% elif player.num_square == 10 %}
+
+        <table class="tftable">
+        <tr ><td style="background-color:rgb(100,{{z.0}},255)"> </td ><td style="background-color:rgb(100,{{z.1}},255)"> </td><td style="background-color:rgb(100,{{z.2}},255)"> </td><td style="background-color:rgb(100,{{z.3}},255)"> </td></tr>
+        <tr><td style="background-color:rgb(100,{{z.4}},255)"> </td><td style="background-color:rgb(100,{{z.5}},255)"> </td><td style="background-color:rgb(100,{{z.6}},255)"> </td><td style="background-color:rgb(100,{{z.7}},255)"> </td></tr>
+        <tr><td style="background-color:rgb(100,{{z.8}},255)"> </td><td style="background-color:rgb(100,{{player.x}},255)"> </td><td style="background-color:rgb(100,{{z.10}},255)"> </td><td style="background-color:rgb(100,{{z.11}},255)"> </td></tr>
+        <tr><td style="background-color:rgb(100,{{z.12}},255)"> </td><td style="background-color:rgb(100,{{z.13}},255)"> </td><td style="background-color:rgb(100,{{z.14}},255)"> </td><td style="background-color:rgb(100,{{z.15}},255)"> </td></tr></table>
+
+        </table>
+    {% elif player.num_square == 11 %}
+
+        <table class="tftable">
+        <tr ><td style="background-color:rgb(100,{{z.0}},255)"> </td ><td style="background-color:rgb(100,{{z.1}},255)"> </td><td style="background-color:rgb(100,{{z.2}},255)"> </td><td style="background-color:rgb(100,{{z.3}},255)"> </td></tr>
+        <tr><td style="background-color:rgb(100,{{z.4}},255)"> </td><td style="background-color:rgb(100,{{z.5}},255)"> </td><td style="background-color:rgb(100,{{z.6}},255)"> </td><td style="background-color:rgb(100,{{z.7}},255)"> </td></tr>
+        <tr><td style="background-color:rgb(100,{{z.8}},255)"> </td><td style="background-color:rgb(100,{{z.9}},255)"> </td><td style="background-color:rgb(100,{{player.x}},255)"> </td><td style="background-color:rgb(100,{{z.11}},255)"> </td></tr>
+        <tr><td style="background-color:rgb(100,{{z.12}},255)"> </td><td style="background-color:rgb(100,{{z.13}},255)"> </td><td style="background-color:rgb(100,{{z.14}},255)"> </td><td style="background-color:rgb(100,{{z.15}},255)"> </td></tr></table>
+
+        </table>
+    {% elif player.num_square == 12 %}
+
+        <table class="tftable">
+        <tr ><td style="background-color:rgb(100,{{z.0}},255)"> </td ><td style="background-color:rgb(100,{{z.1}},255)"> </td><td style="background-color:rgb(100,{{z.2}},255)"> </td><td style="background-color:rgb(100,{{z.3}},255)"> </td></tr>
+        <tr><td style="background-color:rgb(100,{{z.4}},255)"> </td><td style="background-color:rgb(100,{{z.5}},255)"> </td><td style="background-color:rgb(100,{{z.6}},255)"> </td><td style="background-color:rgb(100,{{z.7}},255)"> </td></tr>
+        <tr><td style="background-color:rgb(100,{{z.8}},255)"> </td><td style="background-color:rgb(100,{{z.9}},255)"> </td><td style="background-color:rgb(100,{{z.10}},255)"> </td><td style="background-color:rgb(100,{{player.x}},255)"> </td></tr>
+        <tr><td style="background-color:rgb(100,{{z.12}},255)"> </td><td style="background-color:rgb(100,{{z.13}},255)"> </td><td style="background-color:rgb(100,{{z.14}},255)"> </td><td style="background-color:rgb(100,{{z.15}},255)"> </td></tr></table>
+
+        </table>
+    {% elif player.num_square == 13 %}
+
+        <table class="tftable">
+        <tr ><td style="background-color:rgb(100,{{z.0}},255)"> </td ><td style="background-color:rgb(100,{{z.1}},255)"> </td><td style="background-color:rgb(100,{{z.2}},255)"> </td><td style="background-color:rgb(100,{{z.3}},255)"> </td></tr>
+        <tr><td style="background-color:rgb(100,{{z.4}},255)"> </td><td style="background-color:rgb(100,{{z.5}},255)"> </td><td style="background-color:rgb(100,{{z.6}},255)"> </td><td style="background-color:rgb(100,{{z.7}},255)"> </td></tr>
+        <tr><td style="background-color:rgb(100,{{z.8}},255)"> </td><td style="background-color:rgb(100,{{z.9}},255)"> </td><td style="background-color:rgb(100,{{z.10}},255)"> </td><td style="background-color:rgb(100,{{z.11}},255)"> </td></tr>
+        <tr><td style="background-color:rgb(100,{{player.x}},255)"> </td><td style="background-color:rgb(100,{{z.13}},255)"> </td><td style="background-color:rgb(100,{{z.14}},255)"> </td><td style="background-color:rgb(100,{{z.15}},255)"> </td></tr></table>
+
+        </table>
+    {% elif player.num_square == 14 %}
+
+        <table class="tftable">
+        <tr ><td style="background-color:rgb(100,{{z.0}},255)"> </td ><td style="background-color:rgb(100,{{z.1}},255)"> </td><td style="background-color:rgb(100,{{z.2}},255)"> </td><td style="background-color:rgb(100,{{z.3}},255)"> </td></tr>
+        <tr><td style="background-color:rgb(100,{{z.4}},255)"> </td><td style="background-color:rgb(100,{{z.5}},255)"> </td><td style="background-color:rgb(100,{{z.6}},255)"> </td><td style="background-color:rgb(100,{{z.7}},255)"> </td></tr>
+        <tr><td style="background-color:rgb(100,{{z.8}},255)"> </td><td style="background-color:rgb(100,{{z.9}},255)"> </td><td style="background-color:rgb(100,{{z.10}},255)"> </td><td style="background-color:rgb(100,{{z.11}},255)"> </td></tr>
+        <tr><td style="background-color:rgb(100,{{z.12}},255)"> </td><td style="background-color:rgb(100,{{player.x}},255)"> </td><td style="background-color:rgb(100,{{z.14}},255)"> </td><td style="background-color:rgb(100,{{z.15}},255)"> </td></tr></table>
+
+        </table>
+    {% elif player.num_square == 15 %}
+
+        <table class="tftable">
+        <tr ><td style="background-color:rgb(100,{{z.0}},255)"> </td ><td style="background-color:rgb(100,{{z.1}},255)"> </td><td style="background-color:rgb(100,{{z.2}},255)"> </td><td style="background-color:rgb(100,{{z.3}},255)"> </td></tr>
+        <tr><td style="background-color:rgb(100,{{z.4}},255)"> </td><td style="background-color:rgb(100,{{z.5}},255)"> </td><td style="background-color:rgb(100,{{z.6}},255)"> </td><td style="background-color:rgb(100,{{z.7}},255)"> </td></tr>
+        <tr><td style="background-color:rgb(100,{{z.8}},255)"> </td><td style="background-color:rgb(100,{{z.9}},255)"> </td><td style="background-color:rgb(100,{{z.10}},255)"> </td><td style="background-color:rgb(100,{{z.11}},255)"> </td></tr>
+        <tr><td style="background-color:rgb(100,{{z.12}},255)"> </td><td style="background-color:rgb(100,{{z.13}},255)"> </td><td style="background-color:rgb(100,{{player.x}},255)"> </td><td style="background-color:rgb(100,{{z.15}},255)"> </td></tr></table>
+
+        </table>
+    {% elif player.num_square == 16 %}
+
+        <table class="tftable">
+        <tr ><td style="background-color:rgb(100,{{z.0}},255)"> </td ><td style="background-color:rgb(100,{{z.1}},255)"> </td><td style="background-color:rgb(100,{{z.2}},255)"> </td><td style="background-color:rgb(100,{{z.3}},255)"> </td></tr>
+        <tr><td style="background-color:rgb(100,{{z.4}},255)"> </td><td style="background-color:rgb(100,{{z.5}},255)"> </td><td style="background-color:rgb(100,{{z.6}},255)"> </td><td style="background-color:rgb(100,{{z.7}},255)"> </td></tr>
+        <tr><td style="background-color:rgb(100,{{z.8}},255)"> </td><td style="background-color:rgb(100,{{z.9}},255)"> </td><td style="background-color:rgb(100,{{z.10}},255)"> </td><td style="background-color:rgb(100,{{z.11}},255)"> </td></tr>
+        <tr><td style="background-color:rgb(100,{{z.12}},255)"> </td><td style="background-color:rgb(100,{{z.13}},255)"> </td><td style="background-color:rgb(100,{{z.14}},255)"> </td><td style="background-color:rgb(100,{{player.x}},255)"> </td></tr></table>
+
+        </table>
+
+    {% endif %}
+
+    <p> номер сопадающего сектора уазан ниже
+    </p>
+    {% next_button %}
+     <p>
+    </p>
+     <p>
+    </p>
+     <p>
+    </p>
+     {{ player.num_square }}
+
+{% endblock %}
+
+

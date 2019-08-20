@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="929e0447-8903-473a-bddd-2eff4496aa95" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contracts_H_vs_R/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/contracts_H_vs_R/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contracts_H_vs_R/templates/contracts_H_vs_R/Accept.html" beforeDir="false" afterPath="$PROJECT_DIR$/contracts_H_vs_R/templates/contracts_H_vs_R/Accept.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mpl/templates/mpl/Decision.html" beforeDir="false" afterPath="$PROJECT_DIR$/mpl/templates/mpl/Decision.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_survey/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_survey/models.py" afterDir="false" />
-    </list>
+    <list default="true" id="929e0447-8903-473a-bddd-2eff4496aa95" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,8 +40,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/contracts_H_vs_R/templates/contracts_H_vs_R/Accept.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="31" column="60" selection-start-line="31" selection-start-column="52" selection-end-line="31" selection-end-column="60" />
+            <state relative-caret-position="68">
+              <caret line="4" column="26" lean-forward="true" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -131,7 +125,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="600" />
     <option name="y" value="-12" />
     <option name="width" value="909" />
@@ -253,15 +247,15 @@
       <workItem from="1565065923922" duration="1241000" />
       <workItem from="1565163547928" duration="2918000" />
       <workItem from="1565172115790" duration="5028000" />
-      <workItem from="1565327767521" duration="2037000" />
+      <workItem from="1565327767521" duration="2734000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="144240000" />
+    <option name="totallyTimeSpent" value="144937000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1017" height="615" extended-state="6" />
+    <frame x="-7" y="-7" width="1017" height="615" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2586027" />
@@ -513,8 +507,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/contracts_H_vs_R/templates/contracts_H_vs_R/Accept.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="31" column="60" selection-start-line="31" selection-start-column="52" selection-end-line="31" selection-end-column="60" />
+        <state relative-caret-position="68">
+          <caret line="4" column="26" lean-forward="true" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
         </state>
       </provider>
     </entry>
