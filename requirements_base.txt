@@ -1,6 +1,6 @@
 # Heroku requires Django to be explicitly in requirements file
 # in order to run collectstatic
-python >= 3.7.2
+python >= 3.7
 otree>=2.4.4
 numpy 
 
