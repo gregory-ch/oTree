@@ -71,6 +71,40 @@
 
 	<p>Поэтому ваш выигрыш в данном раунде составит <strong>{{player.payoff}}</strong>.</p>
 
+
+
+
+{% if player.round_number == Constants.num_rounds %}
+    <p> __________________________________ </p>
+    <p> Итоги за всю сессию: </p>
+ <p> Ваш выигрыш в каждом из раундов составил: </p>
+   <div class="table-wrapper">
+        <table class="table table-bordered text-center" >
+            <thead class="border-0">
+            <th class="border-0" width="10%">Раунд</th>
+            <th class="border-0" width="10%">Выигрыш </th>
+
+            </thead>
+            {% for i, j in  payset %}
+                <tr>
+                    <td class="content">
+   					{{ i }}
+                    </td>
+                    <td class="content">
+                    {{j}}
+                    </td>
+                </tr>
+
+            {% endfor %}
+
+        </table>
+    </div>
+<p> Для финальных выплат были выбраны: раунд {{group.realized_rounds_1}} и раунд {{group.realized_rounds_2}} </p>
+<p> Ваш выигрыш за всю сессию, без учета платы за участие составил: {{participant.payoff}}  </p>
+{% endif %}
+
+
+
     <p>{% next_button %}</p>
 
     {% include Constants.instructions_template %}

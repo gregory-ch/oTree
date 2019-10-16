@@ -17,12 +17,18 @@ class PlayerBot(Bot):
                     'task_3': 0.4  ,
                     'task_4': 7    ,
                     'task_5': 437.5,
-                    'task_6': 4    ,
+                    'task_6': 4   ,
+                    'social_media_time_spend':20,
+                    'numb_of_last_books': 5
                     })
         if self.player.role() == 'principal':
             yield (pages.Offer,
-                   {'agent_fixed_pay': 5,
-                   'agent_piece_rate': 2
+                   {'viewed_risk_preff': 1,
+                    'viewed_social_media_time_spend': 1,
+                    'viewed_numb_of_last_books': 1,
+                    'agent_fixed_pay': 5,
+                   'agent_piece_rate': 2,
+                    'expected_efforts': 2
                     })
 
         if self.player.role() == 'agent':

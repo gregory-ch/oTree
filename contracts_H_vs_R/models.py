@@ -15,9 +15,11 @@ Your app description
 class Constants(BaseConstants):
     name_in_url = 'contracts_H_vs_R'
     players_per_group = 2
-    num_rounds = 20
+    num_rounds = 2
     instructions_template = 'contracts_H_vs_R/instructions.html'
 
+
+    session_swicher  =  1
     min_efforts = 0
     max_efforts = 10
     reject_principal_pay = c(0)
@@ -31,20 +33,20 @@ class Constants(BaseConstants):
     mu = 0
     sigma = 4/3
     s = 10 # coeff of production function
-    # r = 1 # risk aversion coefficient of all agents (later will be changed to individual)
+
 
     risk_avers_for_exp_shape = {
         1: 0.5625,
         2: 0.5625,
         3: 0.5625,
-        4: 0.5625,
-        5: 0.5625,
-        6: 0.57364266,
-        7: 0.84197484,
-        8: 1.25999558,
-        9: 20.30937094,
-        10: 377,
-        11: 377
+        4: 0.582,
+        5: 0.680,
+        6: 0.797,
+        7: 0.944,
+        8: 1.149,
+        9: 11.83,
+        10: 255,
+        11: 255
     }
 
 
@@ -54,7 +56,11 @@ class Subsession(BaseSubsession):
     # separation population on Hum vs Hum and Hum vs Robot
 
     def creating_session(self):
-        gtypes = itertools.cycle(['HH', 'HR'])
+
+        if Constants.session_swicher == 1 :
+            gtypes = itertools.cycle(['HH'])
+        else:
+            gtypes = itertools.cycle(['HH', 'HR'])
 
         for g in self.get_groups():
             if self.round_number == 1:
@@ -63,10 +69,22 @@ class Subsession(BaseSubsession):
             else:
                 g.gtype = g.in_round(1).gtype
 
+    def avarege_risk_counter(self):
+        choices=[]
+        for pl in self.get_players():
+            choices.append(pl.participant.vars['av_switching_row_for_rounds'] )
+
+        for pl in self.get_players():
+            pl.avarege_plrs_risk = sum(choices)/len(choices)
+
+
 
 class Group(BaseGroup):
     gtype = models.StringField()
     # General and Hum vs Hum variables
+    realized_rounds_1 = models.FloatField()
+    realized_rounds_2 = models.FloatField()
+
 
     def return_from_effort(self, effort):
         return (effort + self.epsilon) * Constants.s
@@ -87,14 +105,35 @@ class Group(BaseGroup):
         min=Constants.min_fixed_payment, max=Constants.max_fixed_payment,
     )
 
+    agent_q_1 = models.IntegerField(
+            )
+    agent_q_2  = models.IntegerField(
+    )
+
+
     agent_piece_rate = models.FloatField(
         doc="""Cдельная оплата за результат, котороую вы хотите предложить агенту""",
+        min=Constants.min_piece_payment, max=Constants.max_piece_payment,
+    )
+
+    expected_efforts = models.FloatField(
+        doc="""какое количество усилий, как вам кажется, предложит агент """,
         min=Constants.min_piece_payment, max=Constants.max_piece_payment,
     )
 
     Hum_effort = models.FloatField(
         doc="""Количество усилий которые вы хотите затратить""",
         min=Constants.min_efforts , max=Constants.max_efforts ,
+    )
+    viewed_risk_preff  = models.IntegerField(
+        doc="""просмотр предпочтений оппонента""",
+    )
+    viewed_social_media_time_spend  = models.IntegerField(
+        doc="""просмотр времени потраченного на соцсети""",
+    )
+
+    viewed_numb_of_last_books  = models.IntegerField(
+        doc="""просмотр приблизительного колличества прочитанных книг""",
     )
 
 
@@ -124,7 +163,7 @@ class Group(BaseGroup):
         else:
             self.swicher = 'HH'
         if self.gtype != self.swicher:
-            if agent.risk_coeff > 0.521:
+            if agent.risk_coeff > 0.5625:
                 self.robot_agent_offer_piece_rate = round( Constants.s/(1+agent.risk_coeff *(Constants.sigma**2)),2)
                 self.robot_agent_offer_fixed_pay = round( 1 - (self.robot_agent_offer_piece_rate**2)/2 + agent.risk_coeff*(self.robot_agent_offer_piece_rate**2)*(Constants.sigma**2)/2, 2)
             else:
@@ -143,13 +182,19 @@ class Group(BaseGroup):
         agent = self.get_player_by_role('agent')
         self.agent_last_risk_choice = sum(agent.participant.vars['mpl_choices_made']) + 1
         self.agent_average_risk_choice = round(agent.participant.vars['av_switching_row_for_rounds'])
+        self.agent_q_1 = agent.social_media_time_spend
+        self.agent_q_2 = agent.numb_of_last_books
         for p in self.get_players():
             p.risk_choice = sum(p.participant.vars['mpl_choices_made']) + 1
             p.risk_coeff = Constants.risk_avers_for_exp_shape[round(p.participant.vars['av_switching_row_for_rounds'])]
+            if self.round_number > 1:
+                p.social_media_time_spend = p.in_round(self.round_number - 1).social_media_time_spend
+                p.numb_of_last_books = p.in_round(self.round_number - 1).numb_of_last_books
 
 
-
-
+    def set_swicher(self):
+        if Constants.session_swicher == 1:
+            self.swicher = 'HH'
 
 
     def set_payoffs(self):
@@ -160,31 +205,37 @@ class Group(BaseGroup):
             money_to_agent = self.agent_piece_rate*(self.Hum_effort+self.epsilon)+ self.agent_fixed_pay
             agent.payoff = money_to_agent - 0.5 * (self.Hum_effort**(2))
             random_seed = random.random()
-            principal_prob = (self.total_return - money_to_agent)/ 25
-            if principal_prob >= random_seed:
-                principal.payoff = 20
-            else:
-                principal.payoff = 0
+            principal.payoff = (self.total_return - money_to_agent)
+
 
         else:
             self.total_return_Hum_A_vs_robot = self.return_from_effort(self.Hum_effort)
             money_to_agent = self.robot_agent_offer_piece_rate*(self.Hum_effort+self.epsilon)+self.robot_agent_offer_fixed_pay
             agent.payoff = money_to_agent - 0.5 * (self.Hum_effort ** (2))
             random_seed = random.random()
-            etalon_beta= 1-0.5*self.agent_piece_rate**2+0.5*agent.risk_coeff*(Constants.sigma**2)*self.agent_piece_rate**2
+            etalon_beta= -0.5*self.agent_piece_rate**2+0.5*agent.risk_coeff*(Constants.sigma**2)*self.agent_piece_rate**2
             if self.agent_fixed_pay >= etalon_beta:
                 self.robot_effort = self.agent_piece_rate
                 self.total_return_Hum_P_vs_robot = self.return_from_effort(self.robot_effort)
                 money_to_robot_agent = self.agent_piece_rate*(self.robot_effort+self.epsilon)+ self.agent_fixed_pay
-                principal_prob= (self.total_return_Hum_P_vs_robot - money_to_robot_agent)/25
-                if principal_prob >= random_seed:
-                    principal.payoff = 20
-                else:
-                    principal.payoff = 0
+                principal.payoff= (self.total_return_Hum_P_vs_robot - money_to_robot_agent)
+
             else:
                 self.total_return_Hum_P_vs_robot = 0
                 self.robot_effort = 0
                 principal.payoff = 0
+
+    def final_payoff (self):
+        if self.round_number  == Constants.num_rounds:
+            self.realized_rounds_1 = random.randint(1, Constants.num_rounds)
+            self.realized_rounds_2 = random.randint(1, Constants.num_rounds)
+            while self.realized_rounds_1 == self.realized_rounds_2:
+                self.realized_rounds_2 = random.randint(1, Constants.num_rounds)
+            for p in self.get_players():
+                p.participant.payoff = p.in_round(self.realized_rounds_1
+                 ).payoff + p.in_round(self.realized_rounds_2).payoff + p.participant.vars['pl_mpl_payoff']
+
+
 
 
 
@@ -195,6 +246,12 @@ class Player(BasePlayer):
     risk_coeff = models.FloatField()
     risk_choice = models.FloatField()
     numb_errors = models.FloatField()
+    avarege_plrs_risk = models.FloatField()
+
+
+
+
+
     def role(self):
         if self.id_in_group == 1:
             return 'principal'
@@ -232,3 +289,13 @@ class Player(BasePlayer):
                     [5 , '5%'],
                     ]
         )
+
+
+    social_media_time_spend = models.IntegerField(
+        label= 'Дополнительно происим ответить на 2 следующих вопроса (информация о ваших ответах, только на эти два '
+              'вопроса будет доступна другим участникам). '
+              'Укажите приблизительное время, которое вы проводите в соцсетях ежедневно '
+              'исключая случаи нахождения в соцсетях в рабочих целях, рабочую переписку (в минутах)', min = 0, max = 1200)
+
+    numb_of_last_books = models.IntegerField(
+        label='укажите приблизительное колличество книг, прочитанных вами за последние три месяца', min = 0, max = 20)

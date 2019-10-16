@@ -1,0 +1,30 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Choosing difficulty
+{% endblock %}
+
+{% block content %}
+    {{ form.difficulty.errors }}
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Instructions:</h5>
+            Click on the arc length which you prefer:
+        </div>
+    </div>
+    <div id="p5cont"></div>
+    <input type="hidden" name="difficulty" value="0" id="id_difficulty"/>
+    {% next_button %}
+
+{% endblock %}
+{% block scripts %}
+    <script>
+        var speed = 0.01;
+        var choose_difficulty = true;
+
+    </script>
+
+    <script src="{% static 'js/dist/train.js' %}"></script>
+
+{% endblock %}

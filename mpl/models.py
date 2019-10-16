@@ -5,6 +5,7 @@ from otree.api import (
 from mpl.config import *
 import random
 from random import randrange
+import numpy as np
 
 from numpy import mean
 author = 'Felix Holzmeister'
@@ -34,7 +35,7 @@ class Subsession(BaseSubsession):
                 # ----------------------------------------------------------------------------------------------------
                 if Constants.percentage:
                     probabilities = [
-                        "{0:.2f}".format(k / n * 100) + "%"
+                        "{0:.2f}".format((k  / (2*n) + 0.5)) + "%"
                         for k in indices
                     ]
                 else:
@@ -57,6 +58,8 @@ class Subsession(BaseSubsession):
                 # ----------------------------------------------------------------------------------------------------
                 p.participant.vars['mpl_index_to_pay'] = random.choice(indices)
                 p.participant.vars['mpl_choice_to_pay'] = 'choice_' + str(p.participant.vars['mpl_index_to_pay'])
+                skewed_probs = np.array([(k / (2 * n)) + 0.5 for k in indices])
+                p.participant.vars['mpl_skewed_pbob_to_pay'] = skewed_probs[p.participant.vars['mpl_index_to_pay']-1]
 
                 # randomize order of lotteries if <random_order = True>
                 # ----------------------------------------------------------------------------------------------------
@@ -102,6 +105,9 @@ class Player(BasePlayer):
     inconsistent = models.IntegerField()
     switching_row = models.IntegerField()
     av_switching_row = models.FloatField()
+    skewed_probs = models.FloatField()
+    skewed_random_draw = models.FloatField()
+
 
     # set player's payoff
     # ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -114,26 +120,30 @@ class Player(BasePlayer):
         # set <choice_to_pay> to participant.var['choice_to_pay'] determined creating_session
         # ------------------------------------------------------------------------------------------------------------
         self.choice_to_pay = self.participant.vars['mpl_choice_to_pay']
-
+        self.skewed_probs = self.participant.vars['mpl_skewed_pbob_to_pay']
+        self.skewed_random_draw = self.random_draw / Constants.num_choices
         # elicit whether lottery "A" or "B" was chosen for the respective choice
         # ------------------------------------------------------------------------------------------------------------
         self.option_to_pay = getattr(self, self.choice_to_pay)
 
+
         # set player's payoff
         # ------------------------------------------------------------------------------------------------------------
         if self.option_to_pay == 'A':
-            if self.random_draw <= self.participant.vars['mpl_index_to_pay']:
-                self.payoff = Constants.lottery_a_hi*25
+            if (self.random_draw / Constants.num_choices) <= self.participant.vars['mpl_skewed_pbob_to_pay']:
+                self.payoff = Constants.lottery_a_hi
             else:
-                self.payoff = Constants.lottery_a_lo*25
+                self.payoff = Constants.lottery_a_lo
         else:
-            if self.random_draw <= self.participant.vars['mpl_index_to_pay']:
-                self.payoff = Constants.lottery_b_hi*25
+            if (self.random_draw / Constants.num_choices) <= self.participant.vars['mpl_skewed_pbob_to_pay']:
+                self.payoff = Constants.lottery_b_hi
             else:
-                self.payoff = Constants.lottery_b_lo*25
+                self.payoff = Constants.lottery_b_lo
         # set payoff as global variable
         # ------------------------------------------------------------------------------------------------------------
         self.participant.vars['mpl_payoff'] = self.payoff
+
+
 
     # determine consistency
     # ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -161,8 +171,7 @@ class Player(BasePlayer):
         if self.inconsistent == 0:
             self.switching_row = sum(self.participant.vars['mpl_choices_made']) + 1
 
-        if self.round_number == 3:
+        if self.round_number == Constants.num_rounds:
+            self.participant.vars['pl_mpl_payoff'] = self.participant.payoff
             self.av_switching_row = mean([p.switching_row for p in self.in_all_rounds()])
             self.participant.vars['av_switching_row_for_rounds'] = self.av_switching_row
-
-

@@ -16,10 +16,10 @@ class Constants(BaseConstants):
     # lottery payoffs
     # "high" and "low" outcomes (in currency units set in settings.py) of "lottery A" and "lottery B"
     # note that payoffs are identical for all choices and only probabilities of "high" and "low" outcomes change
-    lottery_a_hi = 1.90
-    lottery_a_lo = 1.90
-    lottery_b_hi = 4.5
-    lottery_b_lo = 0.10
+    lottery_a_hi = 5
+    lottery_a_lo = 5
+    lottery_b_hi = 10
+    lottery_b_lo = 3
 
     # number of binary choices between "lottery A" and "lottery B"
     # note that the number of choices determines the probabilities of high and low outcomes of lotteries "A" and "B"
@@ -56,12 +56,12 @@ class Constants(BaseConstants):
     # depict probabilities as percentage numbers
     # if <percentage = True>, the probability of outcome "high" will be displayed as percentage number
     # if <percentage = False>, the probabilities will be displayed as fractions, i.e. "1/X", "2/X", etc.
-    percentage = False
+    percentage = True
 
     # show small pie charts for each lottery
     # if <small_pies = True>, a pie chart depicting the probabilities of outcomes is rendered next to each lottery
     # if <small_pies = False>, no graphical representation of probabilities is displayed
-    small_pies = True
+    small_pies = False
 
     # display lotteries in terms of large pie charts
     # if <large_pies = True>, lotteries are depicted as pie charts; if <large_pies = False> lotteries are list items
@@ -98,4 +98,4 @@ class Constants(BaseConstants):
         else:
             num_rounds = num_choices - 1
     else:
-        num_rounds = 3
+        num_rounds = 1
