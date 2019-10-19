@@ -70,7 +70,7 @@
                     </thead>
 
                     <tbody>
-                        {% for i,f,p in choice_to_pay %}
+                        {% for i,f,p, i_p  in choice_to_pay %}
                             <tr>
                                 <td class="center">
                                     {% with j=i|stringformat:"s" %}
@@ -140,7 +140,7 @@
                     </thead>
 
                     <tbody>
-                        {% for i,f,p in choice_to_pay %}
+                        {% for i,f,p, i_p  in choice_to_pay %}
                             <tr>
                                 <!-- pie charts for A lotteries -->
                                 {% if Constants.small_pies == True %}

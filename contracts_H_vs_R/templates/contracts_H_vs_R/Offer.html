@@ -10,25 +10,25 @@
     <p>
         Вы <strong> Участник 1 </strong>.
 
-        В предыдущей игре вам предлагался выбор из опции A и опции Б в 10-ти лотереях.
-        Участник 2 совершил такой же выбор, номер лотереи в которой Учатник 2 переключился с лотереи А
+        В предыдущей игре вам предлагался выбор из опции A и опции Б в десяти лотереях.
+        Участник 2 совершил такой же выбор, номер лотереи в которой Участник 2 переключился с лотереи А
         на лотерею Б, отражает его предпочтения.
 
     {{ form.viewed_risk_preff.errors }}
 
     <label class="col-form-label">
-    <b>Вы хотите просмотреть данные о предпочтениях из этапа 1 другого игрока в группе?</b>
+    <b>Информация о предпочтениях из этапа 1 другого участника в группе</b>
 </label>
 
 
 <div class="custom-control custom-radio">
   <input type="radio" id="customRadio1" name="viewed_risk_preff" class="custom-control-input"
          data-toggle="collapse" href="#collapseExample" value = 1>
-  <label class="custom-control-label" for="customRadio1">Да</label>
+  <label class="custom-control-label" for="customRadio1">Просмотреть</label>
 </div>
 <div class="custom-control custom-radio">
   <input type="radio" id="customRadio2" name="viewed_risk_preff" class="custom-control-input" value = 0>
-  <label class="custom-control-label" for="customRadio2">Нет</label>
+  <label class="custom-control-label" for="customRadio2">Оставить непросмотренной</label>
 </div>
 
 
@@ -64,7 +64,7 @@
           </tr>
           <tr>
             <td> [фиксированая выплата = 5] </td>
-            <td> [фиксированная выплата]=6 токенов, [переменная выплата] с вероятностью 0.55% примет значение  4                                    иначе примет значение минус 4</td>
+            <td> [фиксированная выплата]=6 токенов, [переменная выплата] с вероятностью  55% примет значение  4                                    иначе примет значение минус 4</td>
             <td>{%  if group.agent_average_risk_choice > 1 %}
                     ☑
                 {% endif %}</td>
@@ -74,7 +74,7 @@
           </tr>
           <tr>
             <td> [фиксированая выплата = 5] </td>
-            <td>  [фиксированная выплата]=6 токенов, [переменная выплата] с вероятностью 0.60% примет значени 4.
+            <td>  [фиксированная выплата]=6 токенов, [переменная выплата] с вероятностью  60% примет значени 4.
                                         иначе примет значение минус 4</td>
             <td>{%  if group.agent_average_risk_choice > 2 %}
                     ☑
@@ -85,7 +85,7 @@
           </tr>
           <tr>
             <td> [фиксированая выплата = 5] </td>
-            <td>  [фиксированная выплата]=6 токенов, [переменная выплата] с вероятностью 0.65% примет значение   4                                   иначе примет значение минус 4</td>
+            <td>  [фиксированная выплата]=6 токенов, [переменная выплата] с вероятностью  65% примет значение   4                                   иначе примет значение минус 4</td>
             <td>{%  if group.agent_average_risk_choice > 3 %}
                     ☑
                 {% endif %}</td>
@@ -95,7 +95,7 @@
           </tr>
           <tr>
             <td> [фиксированая выплата = 5] </td>
-            <td> [фиксированная выплата]=6 токенов, [переменная выплата] с вероятностью 0.70% примет значение  4                                    иначе примет значение минус 4</td>
+            <td> [фиксированная выплата]=6 токенов, [переменная выплата] с вероятностью  70% примет значение  4                                    иначе примет значение минус 4</td>
             <td>{%  if group.agent_average_risk_choice > 4 %}
                     ☑
                 {% endif %}</td>
@@ -105,7 +105,7 @@
           </tr>
           <tr>
             <td> [фиксированая выплата = 5] </td>
-            <td> [фиксированная выплата]=6 токенов, [переменная выплата] с вероятностью 0.75% примет значение  4                                    иначе примет значение минус 4</td>
+            <td> [фиксированная выплата]=6 токенов, [переменная выплата] с вероятностью  75% примет значение  4                                    иначе примет значение минус 4</td>
             <td>{%  if group.agent_average_risk_choice > 5 %}
                     ☑
                 {% endif %}</td>
@@ -115,7 +115,7 @@
           </tr>
           <tr>
             <td> [фиксированая выплата = 5] </td>
-            <td> [фиксированная выплата]=6 токенов, [переменная выплата] с вероятностью 0.80% примет значение  4                                    иначе примет значение минус 4</td>
+            <td> [фиксированная выплата]=6 токенов, [переменная выплата] с вероятностью  80% примет значение  4                                    иначе примет значение минус 4</td>
             <td>{%  if group.agent_average_risk_choice > 6 %}
                     ☑
                 {% endif %}</td>
@@ -125,7 +125,7 @@
           </tr>
           <tr>
             <td> [фиксированая выплата = 5] </td>
-            <td> [фиксированная выплата]=6 токенов, [переменная выплата] с вероятностью 0.85% примет значение  4                                    иначе примет значение минус 4</td>
+            <td> [фиксированная выплата]=6 токенов, [переменная выплата] с вероятностью  85% примет значение  4                                    иначе примет значение минус 4</td>
             <td>{%  if group.agent_average_risk_choice > 7 %}
                     ☑
                 {% endif %}</td>
@@ -135,7 +135,7 @@
           </tr>
           <tr>
             <td> [фиксированая выплата = 5] </td>
-            <td> [фиксированная выплата]=6 токенов, [переменная выплата] с вероятностью 0.90% примет значение  4                                    иначе примет значение минус 4</td>
+            <td> [фиксированная выплата]=6 токенов, [переменная выплата] с вероятностью  90% примет значение  4                                    иначе примет значение минус 4</td>
             <td>{%  if group.agent_average_risk_choice > 8 %}
                     ☑
                 {% endif %}</td>
@@ -145,7 +145,7 @@
           </tr>
           <tr>
             <td> [фиксированая выплата = 5] </td>
-            <td> [фиксированная выплата]=6 токенов, [переменная выплата] с вероятностью 0.95% примет значение  4                                    иначе примет значение минус 4</td>
+            <td> [фиксированная выплата]=6 токенов, [переменная выплата] с вероятностью  95% примет значение  4                                    иначе примет значение минус 4</td>
             <td>{%  if group.agent_average_risk_choice > 9 %}
                     ☑
                 {% endif %}</td>
@@ -155,7 +155,7 @@
           </tr>
           <tr>
             <td> [фиксированая выплата = 5] </td>
-            <td> [фиксированная выплата]=6 токенов, [переменная выплата] с вероятностью  1.00% примет значение 4                                     иначе примет значение минус 4</td>
+            <td> [фиксированная выплата]=6 токенов, [переменная выплата] с вероятностью  100% примет значение 4                                     иначе примет значение минус 4</td>
             <td>{%  if group.agent_average_risk_choice  > 10 %}
                     ☑
                 {% endif %}</td>
@@ -173,41 +173,41 @@
     </div>
 
     <p>    </p>
-    <p><b>Вы хотите просмотреть информацию другого игрока в группе о количестве времени которое он/она проводит в соцсетях ?</b></p>
+    <p><b>
+       Информация о колличестве стран которое посетил другой участник в групе</b></p>
 
 
     <div class="custom-control custom-radio2">
       <input type="radio" id="customRadio11" name="viewed_social_media_time_spend" class="custom-control-input2"
              data-toggle="collapse" href="#collapseExample2" value = 1>
-      <label class="custom-control-label2" for="customRadio11">Да</label>
+      <label class="custom-control-label2" for="customRadio11">Просмотреть информацию</label>
     </div>
     <div class="custom-control custom-radio">
       <input type="radio" id="customRadio21" name="viewed_social_media_time_spend" class="custom-control-input2" value = 0>
-      <label class="custom-control-label2" for="customRadio21">Нет</label>
+      <label class="custom-control-label2" for="customRadio21">Оставить непросмотренной</label>
     </div>
 
 
 
 
     <div class="collapse" id="collapseExample2">
-        <p> Участник 2 проводит приблизительно {{ group.agent_q_1 }}, в соцсетях ежедневно
-              исключая случаи нахождения в соцсетях в рабочих целях, рабочую переписку     </p>
+        <p> Участник 2 посетил  приблизительно {{ group.agent_q_1 }} стран.   </p>
      </div>
 
         {{ form.viewed_social_media_time_spend.errors }}
 
 
-        <p><b>Вы хотите просмотреть информацию другого игрока в группе о количестве прочитанных книг, которое он/она
-            прочел(ла) в течении последних 3-х месяцев?</b></p>
+        <p><b>Информация о количестве прочитанных книг, которые другой участник в группе
+            прочел в течении последних 3-х месяцев</b></p>
 
       <div class="custom-control custom-radio1">
       <input type="radio" id="customRadio12" name="viewed_numb_of_last_books" class="custom-control-input1"
              data-toggle="collapse" href="#collapseExample1" value = 1>
-      <label class="custom-control-label1" for="customRadio12">Да</label>
+      <label class="custom-control-label1" for="customRadio12">Просмотреть информацию</label>
     </div>
     <div class="custom-control custom-radio">
       <input type="radio" id="customRadio22" name="viewed_numb_of_last_books" class="custom-control-input1" value = 0>
-      <label class="custom-control-label1" for="customRadio22">Нет</label>
+      <label class="custom-control-label1" for="customRadio22">Оставить непросмотренной</label>
     </div>
 
 
@@ -229,7 +229,7 @@
 
     {% formfield group.agent_piece_rate label='Переменная выплата' %}
 
-    <p>{% formfield group.expected_efforts label='Сколько усилий вы ожидаете будет приложено' %}
+    <p>{% formfield group.expected_efforts label='Сколько усилий Вы ожидаете будет приложено' %}
     </p>
 
 

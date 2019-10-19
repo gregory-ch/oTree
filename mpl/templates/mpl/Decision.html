@@ -87,7 +87,7 @@
                     </thead>
 
                     <tbody>
-                        {% for i,f,p in choices %}
+                        {% for i,f,p, i_p in choices %}
                             <tr>
                                 <td class="pie-chart">
                                     {% with j=i|stringformat:"s" %}
@@ -136,7 +136,7 @@
                             {% endif %}
                             <th class="lottery-a">{% trans "Вариант А " %} <p>[фиксированная выплата]</p> </th>
                             <th class="formfield"></th>
-                            <th class="lottery-b">{% trans "Вариант Б"  %} <p> [фиксированная] ± [переменная выплата] </p> </th>
+                            <th class="lottery-b">{% trans "Вариант Б"  %} <p> [фиксированная выплата] ± [переменная выплата] </p> </th>
                             {% if Constants.small_pies == True %}
                                 <th class="pie-chart"></th>
                             {% endif %}
@@ -144,7 +144,7 @@
                     </thead>
 
                     <tbody>
-                        {% for i,f,p in choices %}
+                        {% for i,f,p, i_p in choices %}
                             <tr>
                                 <!-- pie charts for A lotteries -->
                                 {% if Constants.small_pies == True %}
@@ -172,8 +172,10 @@
                                 <!-- B lotteries -->
                                 <td class="lottery-b">
                                    <p>[фиксированная выплата] = 6 токенов. </p>
-                                    [переменная выплата] с вероятностью {{ p }} примет значение 4.
-                                    Иначе примет значение минус 4. <br/>
+                                    [переменная выплата] с вероятностью {{ i_p  }} составит -4 (минус 4),
+                                    <br>
+                                    а с вероятностью {{ p }} составит 4 (плюс 4).
+                                     <br/>
                                 </td>
 
                                 <!-- pie charts for B lotteries -->

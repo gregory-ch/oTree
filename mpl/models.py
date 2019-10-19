@@ -35,7 +35,7 @@ class Subsession(BaseSubsession):
                 # ----------------------------------------------------------------------------------------------------
                 if Constants.percentage:
                     probabilities = [
-                        "{0:.2f}".format((k  / (2*n) + 0.5)) + "%"
+                        "{0:.0f}".format((k  / (2*n) + 0.5)*100) + "%"
                         for k in indices
                     ]
                 else:
@@ -43,7 +43,10 @@ class Subsession(BaseSubsession):
                         str(k) + "/" + str(n)
                         for k in indices
                     ]
-
+                inverse_probabilities = [
+                        "{0:.0f}".format(100 - ((k  / (2*n) + 0.5)*100)) + "%"
+                        for k in indices
+                    ]
                 # create list corresponding to form_field variables including all choices
                 # ----------------------------------------------------------------------------------------------------
                 form_fields = ['choice_' + str(k) for k in indices]
@@ -51,7 +54,7 @@ class Subsession(BaseSubsession):
                 # create list of choices
                 # ----------------------------------------------------------------------------------------------------
                 p.participant.vars['mpl_choices'] = list(
-                    zip(indices, form_fields, probabilities)
+                    zip(indices, form_fields, probabilities, inverse_probabilities)
                 )
 
                 # randomly determine index/choice of binary decision to pay
