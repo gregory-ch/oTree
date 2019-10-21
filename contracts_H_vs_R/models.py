@@ -16,7 +16,7 @@ Your app description
 class Constants(BaseConstants):
     name_in_url = 'contracts_H_vs_R'
     players_per_group = 2
-    num_rounds = 2
+    num_rounds = 20
     instructions_template = 'contracts_H_vs_R/instructions.html'
 
 
@@ -234,19 +234,24 @@ class Group(BaseGroup):
             self.realized_rounds_2 = random.randint(1, Constants.num_rounds)
             while self.realized_rounds_1 == self.realized_rounds_2:
                 self.realized_rounds_2 = random.randint(1, Constants.num_rounds)
-            for p in self.get_players():
-                p.participant.payoff = p.in_round(self.realized_rounds_1
-                ).payoff + p.in_round(self.realized_rounds_2).payoff + p.participant.vars['pl_mpl_payoff']
-                if p.participant.payoff < 0 :
-                    p.participant.payoff = 0
+            agent = self.get_player_by_role('agent')
+            agent.payoff = agent.in_round(self.realized_rounds_1).payoff + agent.in_round(
+                self.realized_rounds_2).payoff
+            if agent.payoff < 0:
+                agent.payoff = 0
+            agent.participant.payoff = agent.payoff + agent.participant.vars['pl_mpl_payoff']
+
             principal = self.get_player_by_role('principal')
-            if principal.participant.payoff <= 50:
-                if principal.participant.payoff <= 0:
-                    principal.participant.payoff = Constants.low_payoff
-                else: 
-                    principal.participant.payoff = rdm.choice([Constants.high_payoff, Constants.low_payoff],  p=[float(principal.payoff) / 50, 1 - float(principal.payoff) / 50])
+            principal.payoff = principal.in_round(self.realized_rounds_1).payoff + principal.in_round(
+                self.realized_rounds_2).payoff
+            if principal.payoff <= 50:
+                if principal.payoff <= 0:
+                    principal.participant.payoff = Constants.low_payoff + principal.participant.vars['pl_mpl_payoff']
+                else:
+                    principal.participant.payoff = rdm.choice([Constants.high_payoff, Constants.low_payoff],
+                        p=[float(principal.payoff) / 50, 1 - float(principal.payoff) / 50]) + principal.participant.vars['pl_mpl_payoff']
             else:
-                principal.participant.payoff = Constants.high_payoff
+                principal.participant.payoff = Constants.high_payoff + principal.participant.vars['pl_mpl_payoff']
 
 
 

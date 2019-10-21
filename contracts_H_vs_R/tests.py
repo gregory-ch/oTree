@@ -13,10 +13,10 @@ class PlayerBot(Bot):
         if self.round_number == 1:
             yield (pages.quiz,
                    {'task_1': 40   ,
-                    'task_2': 0.6  ,
+                    'task_2': 15 ,
                     'task_3': 0.4  ,
                     'task_4': 7    ,
-                    'task_5': 437.5,
+                    'task_5': 620,
                     'task_6': 4   ,
                     'social_media_time_spend':20,
                     'numb_of_last_books': 5
