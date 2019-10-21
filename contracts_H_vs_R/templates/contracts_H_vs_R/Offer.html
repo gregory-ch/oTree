@@ -11,7 +11,7 @@
         Вы <strong> Участник 1 </strong>.
 
         В предыдущей игре вам предлагался выбор из опции A и опции Б в десяти лотереях.
-        Участник 2 совершил такой же выбор, номер лотереи в которой Участник 2 переключился с лотереи А
+        Участник 2 совершил выбор в идентичных с Вами условиях, номер лотереи в которой Участник 2 переключился с лотереи А
         на лотерею Б, отражает его предпочтения.
 
     {{ form.viewed_risk_preff.errors }}
@@ -24,7 +24,7 @@
 <div class="custom-control custom-radio">
   <input type="radio" id="customRadio1" name="viewed_risk_preff" class="custom-control-input"
          data-toggle="collapse" href="#collapseExample" value = 1>
-  <label class="custom-control-label" for="customRadio1">Просмотреть</label>
+  <label class="custom-control-label" for="customRadio1">Просмотреть информацию</label>
 </div>
 <div class="custom-control custom-radio">
   <input type="radio" id="customRadio2" name="viewed_risk_preff" class="custom-control-input" value = 0>
@@ -174,7 +174,7 @@
 
     <p>    </p>
     <p><b>
-       Информация о колличестве стран которое посетил другой участник в групе</b></p>
+       Информация о колличестве стран которое посетил другой участник в группе</b></p>
 
 
     <div class="custom-control custom-radio2">
@@ -229,7 +229,7 @@
 
     {% formfield group.agent_piece_rate label='Переменная выплата' %}
 
-    <p>{% formfield group.expected_efforts label='Сколько усилий Вы ожидаете будет приложено' %}
+    <p>{% formfield group.expected_efforts label='Сколько усилий Вы ожидаете будет приложено Участником 2 в данном раунде' %}
     </p>
 
 

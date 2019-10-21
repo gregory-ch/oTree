@@ -3,6 +3,7 @@ from otree.api import (
     Currency as c, currency_range
 )
 import random
+from numpy import random as rdm
 import itertools
 author = 'BeLab HSE'
 
@@ -235,12 +236,14 @@ class Group(BaseGroup):
                 self.realized_rounds_2 = random.randint(1, Constants.num_rounds)
             for p in self.get_players():
                 p.participant.payoff = p.in_round(self.realized_rounds_1
-                 ).payoff + p.in_round(self.realized_rounds_2).payoff + p.participant.vars['pl_mpl_payoff']
+                ).payoff + p.in_round(self.realized_rounds_2).payoff + p.participant.vars['pl_mpl_payoff']
                 if p.participant.payoff < 0 :
                     p.participant.payoff = 0
             principal = self.get_player_by_role('principal')
-            principal.payoff = random.choice([Constants.high_payoff, Constants.low_payoff], p =  [principal.payoff / 50 , 1 - principal.payoff / 50 ])
-
+            if principal.participant.payoff <= 50:
+                principal.participant.payoff = rdm.choice([Constants.high_payoff, Constants.low_payoff],  p=[float(principal.payoff) / 50, 1 - float(principal.payoff) / 50])
+            else:
+                principal.participant.payoff = Constants.high_payoff
 
 
 
