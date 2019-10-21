@@ -241,7 +241,10 @@ class Group(BaseGroup):
                     p.participant.payoff = 0
             principal = self.get_player_by_role('principal')
             if principal.participant.payoff <= 50:
-                principal.participant.payoff = rdm.choice([Constants.high_payoff, Constants.low_payoff],  p=[float(principal.payoff) / 50, 1 - float(principal.payoff) / 50])
+                if principal.participant.payoff <= 0:
+                    principal.participant.payoff = Constants.low_payoff
+                else: 
+                    principal.participant.payoff = rdm.choice([Constants.high_payoff, Constants.low_payoff],  p=[float(principal.payoff) / 50, 1 - float(principal.payoff) / 50])
             else:
                 principal.participant.payoff = Constants.high_payoff
 
