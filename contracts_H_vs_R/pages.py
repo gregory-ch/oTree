@@ -33,7 +33,7 @@ class quiz (Page):
     def task_1_error_message(self, value):
         print('value is', value)
         if value  != '40':
-            return 'пожалуйста проверьте правильность введнного ответа, поднимите руку после третьей' \
+            return 'пожалуйста проверьте правильность введнного ответа, поднимите руку после третьей ' \
                    'попытки ввода неверного значения'
 
     def task_2_error_message(self, value):
