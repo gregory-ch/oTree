@@ -10,6 +10,10 @@ class PreWaitPage(WaitPage):
         return  self.round_number == 1
     wait_for_all_groups = True
 
+    def vars_for_template(self):
+        body_text = "Ожидайте пока другие участники дойдут до этапа 2"
+        return {'body_text': body_text}
+
     def after_all_players_arrive(self):
         self.subsession.avarege_risk_counter()
 
@@ -23,12 +27,18 @@ class Introduction(Page):
     def is_displayed(self):
         return  self.round_number == 1
 
+class question(Page):
+    def is_displayed(self):
+        return  self.round_number == 1
+    form_model = 'player'
+    form_fields = ['social_media_time_spend', 'numb_of_last_books']
+
 class quiz (Page):
     def is_displayed(self):
         return self.round_number == 1
 
     form_model = 'player'
-    form_fields = ['task_1', 'task_2','task_3','task_4','task_5','task_6','social_media_time_spend', 'numb_of_last_books']
+    form_fields = ['task_1', 'task_2','task_3','task_4','task_5','task_6',]
 
     def task_1_error_message(self, value):
         print('value is', value)
@@ -70,8 +80,22 @@ class quiz (Page):
             return 'пожалуйста проверьте правильность введнного ответа, поднимите руку после третьей' \
                    'попытки ввода неверного значения'
 
+    def before_next_page(self):
+        agent = self.group.get_player_by_role('agent')
+        principal = self.group.get_player_by_role('principal')
+        principal.participant.vars['info_for_principal_agent_q1'] = agent.social_media_time_spend
+        principal.participant.vars['info_for_principal_agent_q2'] = agent.numb_of_last_books
+        principal.participant.vars['info_for_principal_agent_risk_among_oth'] = agent.average_plrs_risk
+
 
 class Offer(Page):
+
+    def vars_for_template(self):
+         q1 = self.participant.vars['info_for_principal_agent_q1']
+         q2 = self.participant.vars['info_for_principal_agent_q2']
+         r_am_oth = self.participant.vars['info_for_principal_agent_risk_among_oth']
+         return dict(q1 = q1, q2 = q2 , r_am_oth = r_am_oth)
+
     def is_displayed(self):
         return self.player.role() == 'principal'
 
@@ -93,6 +117,7 @@ class OfferWaitPage(WaitPage):
         else:
             body_text = "Ожидайте Участника 2."
         return {'body_text': body_text}
+
 
     def after_all_players_arrive(self):
         self.group.randome_move_solver()
@@ -125,7 +150,7 @@ class ResultsWaitPage(WaitPage):
 
 class Results(Page):
 
-
+    form_model = 'player'
 
     def vars_for_template(self):
         if self.round_number == Constants.num_rounds:
@@ -134,11 +159,11 @@ class Results(Page):
              for i in range(1, Constants.num_rounds+1):
                  a.append(i)
                  b.append(self.player.in_round(i).payoff)
+             lottery = self.player.participant.payoff - self.player.participant.vars['pl_mpl_payoff']
+             return dict(lottery = lottery, payset = zip(a, b,) )
 
-             return {'payset': zip(a, b,)}
 
     pass
-
 
 
 
@@ -146,6 +171,7 @@ class Results(Page):
 page_sequence = [PreWaitPage,
                  IntroductionWaitPage,
                  Introduction,
+                 question,
                  quiz,
                  Offer,
                  OfferWaitPage,

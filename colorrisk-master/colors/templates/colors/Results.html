@@ -1,0 +1,26 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Results. Period {{ view.round_number }} of {{ Constants.num_rounds }}
+{% endblock %}
+
+{% block content %}
+    <div class="alert alert-info">
+        {% if player.answer == player.todo_num %}
+
+            You have guessed correctly, congratulations!
+        {% else %}
+            Your guess was wrong! :(
+        {% endif %}
+    </div>
+    <div class="alert alert-success">
+        <h4>
+            Your payoff: <span class="badge badge-success">{{ player.payoff }}</span>
+        </h4>
+    </div>
+
+    {% next_button %}
+{% endblock %}
+
+

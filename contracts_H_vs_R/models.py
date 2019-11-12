@@ -78,7 +78,7 @@ class Subsession(BaseSubsession):
             choices.append(pl.participant.vars['av_switching_row_for_rounds'] )
 
         for pl in self.get_players():
-            pl.avarege_plrs_risk = sum(choices)/len(choices)
+            pl.average_plrs_risk = sum(choices)/len(choices)
 
 
 
@@ -87,6 +87,8 @@ class Group(BaseGroup):
     # General and Hum vs Hum variables
     realized_rounds_1 = models.FloatField()
     realized_rounds_2 = models.FloatField()
+
+
 
 
     def return_from_effort(self, effort):
@@ -108,10 +110,10 @@ class Group(BaseGroup):
         min=Constants.min_fixed_payment, max=Constants.max_fixed_payment,
     )
 
-    agent_q_1 = models.IntegerField(
-            )
-    agent_q_2  = models.IntegerField(
-    )
+    # agent_q_1 = models.IntegerField(
+    #         )
+    # agent_q_2  = models.IntegerField(
+    # )
 
 
     agent_piece_rate = models.FloatField(
@@ -185,15 +187,21 @@ class Group(BaseGroup):
         agent = self.get_player_by_role('agent')
         self.agent_last_risk_choice = sum(agent.participant.vars['mpl_choices_made']) + 1
         self.agent_average_risk_choice = round(agent.participant.vars['av_switching_row_for_rounds'])
-        self.agent_q_1 = agent.social_media_time_spend
-        self.agent_q_2 = agent.numb_of_last_books
+        # self.agent_q_1 = agent.social_media_time_spend
+        # self.agent_q_2 = agent.numb_of_last_books
         for p in self.get_players():
             p.risk_choice = sum(p.participant.vars['mpl_choices_made']) + 1
             p.risk_coeff = Constants.risk_avers_for_exp_shape[round(p.participant.vars['av_switching_row_for_rounds'])]
-            if self.round_number > 1:
-                p.social_media_time_spend = p.in_round(self.round_number - 1).social_media_time_spend
-                p.numb_of_last_books = p.in_round(self.round_number - 1).numb_of_last_books
+            # if self.round_number > 1:
+            #     p.social_media_time_spend = p.in_round(self.round_number - 1).social_media_time_spend
+            #     p.numb_of_last_books = p.in_round(self.round_number - 1).numb_of_last_books
 
+    # def info_for_principal_counter(self):
+    #     agent = self.get_player_by_role('agent')
+    #     principal = self.get_player_by_role('principal')
+    #     principal.participant.vars['info_for_principal_agent_q1'] = agent.social_media_time_spend
+    #     principal.participant.vars['info_for_principal_agent_q2'] = agent.numb_of_last_books
+    #     principal.participant.vars['info_for_principal_agent_risk_among_oth'] = agent.average_plrs_risk
 
     def set_swicher(self):
         if Constants.session_swicher == 1:
@@ -235,21 +243,21 @@ class Group(BaseGroup):
             while self.realized_rounds_1 == self.realized_rounds_2:
                 self.realized_rounds_2 = random.randint(1, Constants.num_rounds)
             agent = self.get_player_by_role('agent')
-            agent.payoff = agent.in_round(self.realized_rounds_1).payoff + agent.in_round(
+            agent.contract_game_payoff = agent.in_round(self.realized_rounds_1).payoff + agent.in_round(
                 self.realized_rounds_2).payoff
-            if agent.payoff < 0:
-                agent.payoff = 0
-            agent.participant.payoff = agent.payoff + agent.participant.vars['pl_mpl_payoff']
+            if agent.contract_game_payoff < 0:
+                agent.contract_game_payoff = 0
+            agent.participant.payoff = agent.contract_game_payoff + agent.participant.vars['pl_mpl_payoff']
 
             principal = self.get_player_by_role('principal')
-            principal.payoff = principal.in_round(self.realized_rounds_1).payoff + principal.in_round(
+            principal.contract_game_payoff = principal.in_round(self.realized_rounds_1).payoff + principal.in_round(
                 self.realized_rounds_2).payoff
-            if principal.payoff <= 50:
-                if principal.payoff <= 0:
+            if principal.contract_game_payoff <= 50:
+                if principal.contract_game_payoff <= 0:
                     principal.participant.payoff = Constants.low_payoff + principal.participant.vars['pl_mpl_payoff']
                 else:
                     principal.participant.payoff = rdm.choice([Constants.high_payoff, Constants.low_payoff],
-                        p=[float(principal.payoff) / 50, 1 - float(principal.payoff) / 50]) + principal.participant.vars['pl_mpl_payoff']
+                        p=[float(principal.contract_game_payoff) / 50, 1 - float(principal.contract_game_payoff) / 50]) + principal.participant.vars['pl_mpl_payoff']
             else:
                 principal.participant.payoff = Constants.high_payoff + principal.participant.vars['pl_mpl_payoff']
 
@@ -263,9 +271,9 @@ class Player(BasePlayer):
     risk_coeff = models.FloatField()
     risk_choice = models.FloatField()
     numb_errors = models.FloatField()
-    avarege_plrs_risk = models.FloatField()
+    average_plrs_risk = models.FloatField()
 
-
+    contract_game_payoff = models.CurrencyField()
 
 
 
@@ -285,8 +293,9 @@ class Player(BasePlayer):
               'компьютер на шаге 3 выбрал значение случайного фактора, оно составло - 1. Сколько токентов получит Участник 1 за раунд?')
 
     task_3 = models.StringField(
-        label='Предположим что результат повторился и компьютр выбрал оба результата в качестве выплат за этап 2. '
-              'Какова вероятность того, что участник 1 получит 10 токенов за этап 2 ?')
+        label='Предположим что результат повторился и компьютер выбрал оба результата в качестве выплат за этап 2. '
+              'Какова вероятность того, что участник 1 получит 10 токенов за этап 2 ?'
+              '(для использования 10-й записи используйте точку как разделитель)')
 
     task_4 = models.StringField(
         label='Сколько получит Участник 2? ')
@@ -310,7 +319,7 @@ class Player(BasePlayer):
 
 
     social_media_time_spend = models.IntegerField(
-        label= 'Дополнительно происим ответить на 2 следующих вопроса (информация о ваших ответах, только на эти два '
+        label= 'Дополнительно просим ответить на 2 следующих вопроса (информация о ваших ответах, только на эти два '
               'вопроса будет доступна другим участникам). '
               'Укажите приблизительное колличество стран, которое вы посетили?', min = 0, max = 100)
 

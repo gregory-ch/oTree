@@ -11,7 +11,7 @@
 	{% if group.gtype == group.swicher %}
 		<p>
 		{% if player.role == 'agent' %}
-			Компьютер выбрал значение удачи: {{ group.epsilon}}, выплаты по контракту составят:
+			Компьютер выбрал значение случайного фактора: {{ group.epsilon}}, выплаты по контракту составят:
 		{% else %}
 			Участник 2 принял свое решение, в результате  контракт включает в себя:
 		{% endif %}
@@ -85,7 +85,7 @@
             <th class="border-0" width="10%">Выигрыш </th>
 
             </thead>
-            {% for i, j in  payset %}
+            {% for i, j in  payset  %}
                 <tr>
                     <td class="content">
    					{{ i }}
@@ -100,6 +100,9 @@
         </table>
     </div>
 <p> Для финальных выплат были выбраны: раунд {{group.realized_rounds_1}} и раунд {{group.realized_rounds_2}} </p>
+    {% if player.role == 'principal'  %}
+        Компьютер выбрал выигрыш за этап 2: {{lottery}}
+    {% endif %}
 <p> Ваш выигрыш за всю сессию, без учета платы за участие составил: {{participant.payoff}}  </p>
 {% endif %}
 
