@@ -178,10 +178,16 @@ class Group(BaseGroup):
 
     def x_counter_H (self):
          self.eff_plus_eps = self.Hum_effort + self.epsilon
+         if self.eff_plus_eps < 0:
+             self.eff_plus_eps = 0
+
+
 
     def x_counter_R (self):
         if self.gtype != self.swicher:
             self.eff_plus_eps_r = self.robot_effort + self.epsilon
+            if self.eff_plus_eps_r < 0:
+                self.eff_plus_eps_r = 0
 
     def risk_counter(self):
         agent = self.get_player_by_role('agent')
