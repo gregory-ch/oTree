@@ -4,6 +4,8 @@ from otree.api import (
 )
 from otree.db.models import _PickleField as PickleField
 import random
+from colormath.color_objects import LabColor, HSLColor
+from colormath.color_conversions import convert_color
 
 author = 'Alexis Belianin, Philipp Chapkovski, Gregory Chernov, HSE-Moscow'
 
@@ -28,7 +30,7 @@ class Constants(BaseConstants):
     payoffs = list(range(num_difficulty_choices + 1, 1, -1))  # quick lazy fix for payoffs for now
     payoff_dict = dict(zip(DIFFICULTY_CHOICES, payoffs))  # that's an ugly lazy way of doing things. Should be replaced
     hue = 10  # these three parameters define starting color
-    saturation = 100
+    saturation = 50
     lightness = 64
     start_color = {'hue': hue, 'saturation': saturation, 'lightness': lightness}
     payoff_if_fail = c(0)
@@ -69,3 +71,8 @@ class Player(BasePlayer):
         self.colors = [random.uniform(Constants.hue, ub) for _ in range(Constants.num_colors)]
         self.todo_num = random.choice(range(1, Constants.num_colors + 1))
         self.todo_color = self.colors[self.todo_num - 1]
+
+
+lab = LabColor(0.903, 16.296, -2.22)
+xyz = convert_color(lab, HSLColor)
+print(xyz)
