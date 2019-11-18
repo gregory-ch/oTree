@@ -11,6 +11,13 @@ class PlayerBot(Bot):
             yield (pages.Introduction)
 
         if self.round_number == 1:
+            yield (pages.question,
+                   {
+                    'social_media_time_spend':20,
+                    'numb_of_last_books': 5
+                    })
+
+        if self.round_number == 1:
             yield (pages.quiz,
                    {'task_1': 40   ,
                     'task_2': 15 ,
@@ -18,8 +25,7 @@ class PlayerBot(Bot):
                     'task_4': 7    ,
                     'task_5': 620,
                     'task_6': 4   ,
-                    'social_media_time_spend':20,
-                    'numb_of_last_books': 5
+
                     })
         if self.player.role() == 'principal':
             yield (pages.Offer,

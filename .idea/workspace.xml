@@ -3,15 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="929e0447-8903-473a-bddd-2eff4496aa95" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/colorrisk-master/colors/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/colorrisk-master/colors/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/colorrisk-master/colors/pages.py" beforeDir="false" afterPath="$PROJECT_DIR$/colorrisk-master/colors/pages.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contracts_H_vs_R/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/contracts_H_vs_R/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contracts_H_vs_R/templates/contracts_H_vs_R/Accept.html" beforeDir="false" afterPath="$PROJECT_DIR$/contracts_H_vs_R/templates/contracts_H_vs_R/Accept.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contracts_H_vs_R/templates/contracts_H_vs_R/Offer.html" beforeDir="false" afterPath="$PROJECT_DIR$/contracts_H_vs_R/templates/contracts_H_vs_R/Offer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contracts_H_vs_R/templates/contracts_H_vs_R/Results.html" beforeDir="false" afterPath="$PROJECT_DIR$/contracts_H_vs_R/templates/contracts_H_vs_R/Results.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mpl/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/mpl/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mpl/templates/mpl/Results.html" beforeDir="false" afterPath="$PROJECT_DIR$/mpl/templates/mpl/Results.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contracts_H_vs_R/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/contracts_H_vs_R/tests.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -107,7 +99,7 @@
       <workItem from="1573022381180" duration="293000" />
       <workItem from="1573291367297" duration="6503000" />
       <workItem from="1573470971041" duration="11239000" />
-      <workItem from="1573808921010" duration="10648000" />
+      <workItem from="1573808921010" duration="11222000" />
     </task>
     <servers />
   </component>
