@@ -16,7 +16,7 @@ Your app description
 class Constants(BaseConstants):
     name_in_url = 'contracts_H_vs_R'
     players_per_group = 2
-    num_rounds = 10
+    num_rounds = 20
     instructions_template = 'contracts_H_vs_R/instructions.html'
 
 
@@ -263,7 +263,8 @@ class Group(BaseGroup):
                     principal.participant.payoff = Constants.low_payoff + principal.participant.vars['pl_mpl_payoff']
                 else:
                     principal.participant.payoff = rdm.choice([Constants.high_payoff, Constants.low_payoff],
-                        p=[float(principal.contract_game_payoff) / 50, 1 - float(principal.contract_game_payoff) / 50]) + principal.participant.vars['pl_mpl_payoff']
+                        p=[float(principal.contract_game_payoff) / 50, 1 - float(principal.contract_game_payoff) / 50]
+                                                              ) + principal.participant.vars['pl_mpl_payoff']
             else:
                 principal.participant.payoff = Constants.high_payoff + principal.participant.vars['pl_mpl_payoff']
 
@@ -296,7 +297,7 @@ class Player(BasePlayer):
     task_2 = models.StringField(
         label='Задание 2. Во втором этапе  Участник 1 на шаге 1 в первом раунде предложил фиксированную часть вознаграждения '
               ' в размере 9, и переменную часть в размере 2.  Участник 2 предпринял усилия 4 и '
-              'компьютер на шаге 3 выбрал значение случайного фактора, оно составло - 1. Сколько токентов получит Участник 1 за раунд?')
+              'компьютер на шаге 3 выбрал значение случайного фактора, оно составло - 1 (минус один). Сколько токентов получит Участник 1 за раунд?')
 
     task_3 = models.StringField(
         label='Предположим что результат повторился и компьютер выбрал оба результата в качестве выплат за этап 2. '
@@ -304,7 +305,7 @@ class Player(BasePlayer):
               '(для использования 10-й записи используйте точку как разделитель)')
 
     task_4 = models.StringField(
-        label='Сколько получит Участник 2? ')
+        label='Сколько получит Участник 2 за один раунд? ')
 
     task_5 = models.StringField(
         label='Задание 3. Участник 2  на втором этапе в течение 20 раундов выигрывал в каждом раунде по 12 токенов, на первом этапе '

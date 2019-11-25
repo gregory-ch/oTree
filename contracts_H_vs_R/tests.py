@@ -23,7 +23,7 @@ class PlayerBot(Bot):
                     'task_2': 15 ,
                     'task_3': 0.4  ,
                     'task_4': 7    ,
-                    'task_5': 620,
+                    'task_5': 470,
                     'task_6': 4   ,
 
                     })

@@ -7,7 +7,7 @@ from os import environ
 
 SESSION_CONFIG_DEFAULTS = {
     'real_world_currency_per_point': 10.00,
-    'participation_fee': 150.00,
+    'participation_fee': 0.00,
     'doc': "",
 
 }

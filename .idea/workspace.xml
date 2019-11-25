@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="929e0447-8903-473a-bddd-2eff4496aa95" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contracts_H_vs_R/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/contracts_H_vs_R/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contracts_H_vs_R/pages.py" beforeDir="false" afterPath="$PROJECT_DIR$/contracts_H_vs_R/pages.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/contracts_H_vs_R/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/contracts_H_vs_R/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -36,7 +39,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/contracts_H_vs_R/templates/contracts_H_vs_R" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
@@ -99,7 +102,9 @@
       <workItem from="1573022381180" duration="293000" />
       <workItem from="1573291367297" duration="6503000" />
       <workItem from="1573470971041" duration="11239000" />
-      <workItem from="1573808921010" duration="11222000" />
+      <workItem from="1573808921010" duration="11882000" />
+      <workItem from="1574417499037" duration="193000" />
+      <workItem from="1574669669806" duration="1912000" />
     </task>
     <servers />
   </component>
