@@ -17,7 +17,7 @@ accept. The agent then chooses an effort level. The implementation is based on
 class Constants(BaseConstants):
     name_in_url = 'principal_agent'
     players_per_group = 2
-    num_rounds = 1
+    num_rounds = 7
 
     instructions_template = 'principal_agent/Instructions.html'
 

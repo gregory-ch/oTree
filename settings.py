@@ -19,6 +19,16 @@ SESSION_CONFIGS = [
         'num_demo_participants': 3,
         'app_sequence': ['public_goods', 'payment_info', 'my_survey'],
     },
+	
+
+    {
+       'name': 'trains',
+       'display_name': "trains",
+       'num_demo_participants': 1,
+       'app_sequence': ['trains'],
+    },
+
+	
     {
         'name': 'guess_two_thirds',
         'display_name': "Guess 2/3 of the Average",
@@ -36,12 +46,12 @@ SESSION_CONFIGS = [
     #     'app_sequence': ['quiz'],
     # },
 
-    # {
-    # 'name': 'principal_agent',
-    # 'display_name': "Principal Agent",
-    # 'num_demo_participants': 2,
-    # 'app_sequence': ['principal_agent', 'payment_info'],
-    # },
+    {
+    'name': 'principal_agent',
+    'display_name': "Principal Agent",
+    'num_demo_participants': 2,
+    'app_sequence': ['principal_agent', 'payment_info'],
+    },
 	
 {
         'name': 'color_table',

@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="929e0447-8903-473a-bddd-2eff4496aa95" name="Default Changelist" comment="" />
+    <list default="true" id="929e0447-8903-473a-bddd-2eff4496aa95" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/principal_agent/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/principal_agent/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,6 +104,8 @@
       <workItem from="1573808921010" duration="11882000" />
       <workItem from="1574417499037" duration="193000" />
       <workItem from="1574669669806" duration="2154000" />
+      <workItem from="1575014354551" duration="3715000" />
+      <workItem from="1575115609690" duration="837000" />
     </task>
     <servers />
   </component>
