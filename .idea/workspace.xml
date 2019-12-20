@@ -2,10 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="929e0447-8903-473a-bddd-2eff4496aa95" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contracts_H_vs_R/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/contracts_H_vs_R/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/principal_agent/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/principal_agent/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mpl/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/mpl/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_survey/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_survey/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trainsrisk-master/trains/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/trainsrisk-master/trains/_builtin/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/trainsrisk-master/trains/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/trainsrisk-master/trains/pages.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/trainsrisk-master/trains/static/js/dist/difficulty.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/trainsrisk-master/trains/static/js/dist/train.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/trainsrisk-master/trains/static/js/src/arc.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/trainsrisk-master/trains/static/js/src/bubble.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/trainsrisk-master/trains/static/js/src/constants.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/trainsrisk-master/trains/static/js/src/difficulty.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/trainsrisk-master/trains/static/js/src/extra.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/trainsrisk-master/trains/static/js/src/p5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/trainsrisk-master/trains/static/js/src/train.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/trainsrisk-master/trains/templates/trains/DifficultyChoice.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/trainsrisk-master/trains/templates/trains/MyPage.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/trainsrisk-master/trains/templates/trains/Results.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/trainsrisk-master/trains/templates/trains/Task.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/trainsrisk-master/trains/tests.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -106,6 +126,10 @@
       <workItem from="1574669669806" duration="2154000" />
       <workItem from="1575014354551" duration="3715000" />
       <workItem from="1575115609690" duration="837000" />
+      <workItem from="1575692807845" duration="2773000" />
+      <workItem from="1576773113996" duration="609000" />
+      <workItem from="1576827741539" duration="4410000" />
+      <workItem from="1576842097600" duration="618000" />
     </task>
     <servers />
   </component>

@@ -98,4 +98,4 @@ class Constants(BaseConstants):
         else:
             num_rounds = num_choices - 1
     else:
-        num_rounds = 3
+        num_rounds = 1

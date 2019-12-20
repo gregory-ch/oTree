@@ -16,7 +16,7 @@ Your app description
 class Constants(BaseConstants):
     name_in_url = 'contracts_H_vs_R'
     players_per_group = 2
-    num_rounds = 20
+    num_rounds = 3
     instructions_template = 'contracts_H_vs_R/instructions.html'
 
 
@@ -59,18 +59,26 @@ class Subsession(BaseSubsession):
     # separation population on Hum vs Hum and Hum vs Robot
 
     def creating_session(self):
-
+        self.group_randomly(fixed_id_in_group=True)
         if Constants.session_swicher == 1 :
             gtypes = itertools.cycle(['HH'])
         else:
             gtypes = itertools.cycle(['HH', 'HR'])
-
         for g in self.get_groups():
-            if self.round_number == 1:
-                gtype = next(gtypes)
-                g.gtype = gtype
-            else:
-                g.gtype = g.in_round(1).gtype
+            gtype = next(gtypes)
+            g.gtype = gtype
+
+
+        # for g in self.get_groups():
+        #     if self.round_number == 1:
+        #         gtype = next(gtypes)
+        #         g.gtype = gtype
+        #     else:
+        #         gtype = next(gtypes)
+        #         g.gtype = gtype
+        # g.gtype = g.in_round(1).gtype
+
+
 
     def avarege_risk_counter(self):
         choices=[]
