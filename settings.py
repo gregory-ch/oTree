@@ -19,16 +19,6 @@ SESSION_CONFIGS = [
         'num_demo_participants': 3,
         'app_sequence': ['public_goods', 'payment_info', 'my_survey'],
     },
-	
-
-    {
-       'name': 'trains',
-       'display_name': "trains",
-       'num_demo_participants': 1,
-       'app_sequence': ['trains'],
-    },
-
-	
     {
         'name': 'guess_two_thirds',
         'display_name': "Guess 2/3 of the Average",
@@ -46,36 +36,36 @@ SESSION_CONFIGS = [
     #     'app_sequence': ['quiz'],
     # },
 
+    # {
+    # 'name': 'principal_agent',
+    # 'display_name': "Principal Agent",
+    # 'num_demo_participants': 2,
+    # 'app_sequence': ['principal_agent', 'payment_info'],
+    # },
+
     {
-    'name': 'principal_agent',
-    'display_name': "Principal Agent",
-    'num_demo_participants': 2,
-    'app_sequence': ['principal_agent', 'payment_info'],
-    },
-	
-{
         'name': 'color_table',
         'display_name': "color_table",
         'num_demo_participants': 10,
         'app_sequence': ['color_table']
     },
-{
-    'name': 'Contracts_H_VS_R',
-    'display_name': "Contracts_H_VS_R",
-    'num_demo_participants': 4,
-    'app_sequence': ['mpl','contracts_H_vs_R','my_survey'],
-    # 'app_sequence': ['mpl'],
-    'use_browser_bots': False
+    {
+        'name': 'Contracts_H_VS_R',
+        'display_name': "Contracts_H_VS_R",
+        'num_demo_participants': 2,
+        'app_sequence': ['mpl', 'contracts_H_vs_R', 'my_survey'],
+        # 'app_sequence': ['mpl'],
+        'use_browser_bots': False
     },
-#
-# {
-#     'name': 'bret',
-#     'display_name': "bret",
-#     'num_demo_participants': 1,
-#     'app_sequence': ['bret'],
-#     },
+    #
+    # {
+    #     'name': 'bret',
+    #     'display_name': "bret",
+    #     'num_demo_participants': 1,
+    #     'app_sequence': ['bret'],
+    #     },
 
-#
+    #
 ]
 # see the end of this file for the inactive session configs
 
@@ -88,9 +78,6 @@ LANGUAGE_CODE = 'ru'
 REAL_WORLD_CURRENCY_CODE = 'RUR'
 USE_POINTS = True
 POINTS_CUSTOM_NAME = 'токен'
-
-
-
 
 ROOMS = [
 
@@ -111,7 +98,6 @@ OTREE_PRODUCTION = True
 ADMIN_USERNAME = 'admin'
 # for security, best to set admin password in an environment variable
 ADMIN_PASSWORD = environ.get('OTREE_ADMIN_PASSWORD')
-
 
 DEMO_PAGE_INTRO_HTML = """
 Here are some oTree games.
