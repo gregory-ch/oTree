@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="929e0447-8903-473a-bddd-2eff4496aa95" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime.txt" beforeDir="false" afterPath="$PROJECT_DIR$/runtime.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trainsrisk-master/trains/__init__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/trainsrisk-master/trains/_builtin/__init__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/trainsrisk-master/trains/models.py" beforeDir="false" />
@@ -125,7 +124,7 @@
       <workItem from="1575692807845" duration="2773000" />
       <workItem from="1576773113996" duration="609000" />
       <workItem from="1576827741539" duration="4410000" />
-      <workItem from="1576842097600" duration="965000" />
+      <workItem from="1576842097600" duration="1221000" />
     </task>
     <servers />
   </component>
