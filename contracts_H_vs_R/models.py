@@ -118,6 +118,13 @@ class Group(BaseGroup):
         min=Constants.min_fixed_payment, max=Constants.max_fixed_payment,
     )
 
+    agent_social_media_time_spend = models.FloatField(
+        doc="""информация для принципала об отвеченном вопросе"""
+    )
+
+    agent_numb_of_last_books = models.FloatField(
+        doc="""информация для принципала об отвеченном вопросе"""
+    )
     # agent_q_1 = models.IntegerField(
     #         )
     # agent_q_2  = models.IntegerField(
@@ -189,7 +196,10 @@ class Group(BaseGroup):
          if self.eff_plus_eps < 0:
              self.eff_plus_eps = 0
 
-
+    def show_prefference_to_principal (self):
+        agent = self.get_player_by_role('agent')
+        self.agent_social_media_time_spend = agent.participant.vars['info_for_principal_agent_q1']
+        self.agent_numb_of_last_books = agent.participant.vars['info_for_principal_agent_q2']
 
     def x_counter_R (self):
         if self.gtype != self.swicher:
@@ -220,6 +230,7 @@ class Group(BaseGroup):
     def set_swicher(self):
         if Constants.session_swicher == 1:
             self.swicher = 'HH'
+
 
 
     def set_payoffs(self):

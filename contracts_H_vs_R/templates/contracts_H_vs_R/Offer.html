@@ -190,7 +190,7 @@
 
 
     <div class="collapse" id="collapseExample2">
-        <p> Участник 2 посетил  приблизительно {{ q1 }} стран.   </p>
+        <p> Участник 2 посетил  приблизительно {{ group.agent_social_media_time_spend  }} стран.   </p>
      </div>
 
         {{ form.viewed_social_media_time_spend.errors }}
@@ -212,7 +212,7 @@
 
 
     <div class="collapse" id="collapseExample1">
-        <p> Участник 2 прочел приблизительно  {{ q2  }}, книг за последние 3 месяца    </p>
+        <p> Участник 2 прочел приблизительно  {{ group.agent_numb_of_last_books }}, книг за последние 3 месяца    </p>
      </div>
 
             {{ form.viewed_numb_of_last_books.errors }}

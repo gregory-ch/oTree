@@ -6,9 +6,10 @@ from decimal import Decimal
 
 
 class PreWaitPage(WaitPage):
-    def is_displayed(self):
-        return  self.round_number == 1
+    # def is_displayed(self):
+    #     return  self.round_number == 1
     wait_for_all_groups = True
+
 
     def vars_for_template(self):
         body_text = "Ожидайте пока другие участники дойдут до этапа 2"
@@ -22,6 +23,9 @@ class IntroductionWaitPage(WaitPage):
     def after_all_players_arrive(self):
         self.group.risk_counter()
         self.group.set_swicher()
+
+
+
 
 class Introduction(Page):
     def is_displayed(self):
@@ -83,18 +87,19 @@ class quiz (Page):
     def before_next_page(self):
         agent = self.group.get_player_by_role('agent')
         principal = self.group.get_player_by_role('principal')
-        principal.participant.vars['info_for_principal_agent_q1'] = agent.social_media_time_spend
-        principal.participant.vars['info_for_principal_agent_q2'] = agent.numb_of_last_books
+        agent.participant.vars['info_for_principal_agent_q1'] = agent.social_media_time_spend
+        agent.participant.vars['info_for_principal_agent_q2'] = agent.numb_of_last_books
         principal.participant.vars['info_for_principal_agent_risk_among_oth'] = agent.average_plrs_risk
 
+class IntroductionWaitPage2(WaitPage):
+
+    def after_all_players_arrive(self):
+        self.group.show_prefference_to_principal()
 
 class Offer(Page):
-
     def vars_for_template(self):
-         q1 = self.participant.vars['info_for_principal_agent_q1']
-         q2 = self.participant.vars['info_for_principal_agent_q2']
          r_am_oth = self.participant.vars['info_for_principal_agent_risk_among_oth']
-         return dict(q1 = q1, q2 = q2 , r_am_oth = r_am_oth)
+         return dict( r_am_oth = r_am_oth)
 
     def is_displayed(self):
         return self.player.role() == 'principal'
@@ -173,6 +178,7 @@ page_sequence = [PreWaitPage,
                  Introduction,
                  question,
                  quiz,
+                 IntroductionWaitPage2,
                  Offer,
                  OfferWaitPage,
                  Accept,
