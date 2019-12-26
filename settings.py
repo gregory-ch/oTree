@@ -52,7 +52,7 @@ SESSION_CONFIGS = [
     {
         'name': 'Contracts_H_VS_R',
         'display_name': "Contracts_H_VS_R",
-        'num_demo_participants': 6,
+        'num_demo_participants': 2,
         'app_sequence': ['mpl', 'contracts_H_vs_R', 'my_survey'],
         # 'app_sequence': ['mpl'],
         'use_browser_bots': False

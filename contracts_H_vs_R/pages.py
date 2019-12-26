@@ -97,6 +97,8 @@ class IntroductionWaitPage2(WaitPage):
         self.group.show_prefference_to_principal()
 
 class Offer(Page):
+    timeout_seconds = 180
+
     def vars_for_template(self):
          r_am_oth = self.participant.vars['info_for_principal_agent_risk_among_oth']
          return dict( r_am_oth = r_am_oth)
@@ -131,6 +133,7 @@ class OfferWaitPage(WaitPage):
 
 
 class Accept(Page):
+    timeout_seconds = 180
     def is_displayed(self):
         return self.player.role() == 'agent'
 
