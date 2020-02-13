@@ -13,8 +13,8 @@ class PlayerBot(Bot):
         if self.round_number == 1:
             yield (pages.question,
                    {
-                    'social_media_time_spend':20,
-                    'numb_of_last_books': 5
+                    'social_media_time_spend':2,
+                    'numb_of_last_books': 3
                     })
 
         if self.round_number == 1:

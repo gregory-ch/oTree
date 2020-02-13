@@ -18,7 +18,8 @@ class Demographics(Page):
                    'trust',
                    'feedback_1',
                    'feedback_2',
-                   'feedback_3'
+                   'feedback_3',
+                   'feedback_4'
                    ]
 
     # def age_error_message(self, value):
@@ -55,5 +56,5 @@ class Block_2(Page):
 
 page_sequence = [
     Demographics,
-    Block_2,
+    # Block_2,
 ]

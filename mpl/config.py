@@ -19,7 +19,7 @@ class Constants(BaseConstants):
     lottery_a_hi = 5
     lottery_a_lo = 5
     lottery_b_hi = 10
-    lottery_b_lo = 3
+    lottery_b_lo = 2
 
     # number of binary choices between "lottery A" and "lottery B"
     # note that the number of choices determines the probabilities of high and low outcomes of lotteries "A" and "B"
@@ -98,4 +98,4 @@ class Constants(BaseConstants):
         else:
             num_rounds = num_choices - 1
     else:
-        num_rounds = 3
+        num_rounds = 1

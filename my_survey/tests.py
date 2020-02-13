@@ -22,7 +22,9 @@ class PlayerBot(Bot):
             'trust':'Большинству людей можно доверять',
             'feedback_1': 0,
             'feedback_2': 0,
-            'feedback_3': 0
+            'feedback_3': 0,
+            'feedback_4': 0
+
             })
 
         yield (pages.Block_2, {

@@ -117,6 +117,7 @@ class Offer(Page):
 
 
 
+
 class OfferWaitPage(WaitPage):
     def vars_for_template(self):
         if self.player.role() == 'agent':

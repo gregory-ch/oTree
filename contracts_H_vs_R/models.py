@@ -2,8 +2,8 @@ from otree.api import (
     models, widgets, BaseConstants, BaseSubsession, BaseGroup, BasePlayer,
     Currency as c, currency_range
 )
-import random
-from numpy import random as rdm
+from numpy import random
+from numpy import array
 import itertools
 author = 'BeLab HSE'
 
@@ -16,7 +16,7 @@ Your app description
 class Constants(BaseConstants):
     name_in_url = 'contracts_H_vs_R'
     players_per_group = 2
-    num_rounds = 20
+    num_rounds = 3
     instructions_template = 'contracts_H_vs_R/instructions.html'
 
 
@@ -27,7 +27,7 @@ class Constants(BaseConstants):
     reject_agent_pay = c(0)
 
     min_fixed_payment = c(0)
-    max_fixed_payment = c(100)
+    max_fixed_payment = c(50)
 
     min_piece_payment = c(0)
     max_piece_payment = c(10)
@@ -35,24 +35,26 @@ class Constants(BaseConstants):
     sigma = 4/3
     high_payoff = c(40)
     low_payoff = c(10)
+    reserve = c(50)
     s = 10 # coeff of production function
 
 
     risk_avers_for_exp_shape = {
-        1: 0.5625,
-        2: 0.5625,
-        3: 0.5625,
-        4: 0.582,
-        5: 0.680,
-        6: 0.797,
-        7: 0.944,
-        8: 1.149,
-        9: 11.83,
-        10: 255,
-        11: 255
+        1: 0.183,
+        2: 0.21,
+        3: 0.267,
+        4: 0.328,
+        5: 0.396,
+        6: 0.474,
+        7: 0.568,
+        8: 0.69,
+        9: 0.879,
+        10: 4.15,
+        11: 7.83
     }
 
-
+    probs = array([0.001 , 0.02, 0.111, 0.12, 0.16, 0.176, 0.16, 0.12, 0.111 , 0.02, 0.001 ])
+    epsilon_value = array([-8,-4,-3,-2,-1,0,1,2,3,4,8])
 
 class Subsession(BaseSubsession):
 
@@ -118,11 +120,11 @@ class Group(BaseGroup):
         min=Constants.min_fixed_payment, max=Constants.max_fixed_payment,
     )
 
-    agent_social_media_time_spend = models.FloatField(
+    agent_social_media_time_spend = models.StringField(
         doc="""информация для принципала об отвеченном вопросе"""
     )
 
-    agent_numb_of_last_books = models.FloatField(
+    agent_numb_of_last_books = models.StringField(
         doc="""информация для принципала об отвеченном вопросе"""
     )
     # agent_q_1 = models.IntegerField(
@@ -172,7 +174,8 @@ class Group(BaseGroup):
 
     epsilon = models.FloatField()  # - random variable computation, нужно не забыть ограничить
     def randome_move_solver(self):
-        self.epsilon = round( random.normalvariate(Constants.mu, Constants.sigma),2)
+        self.epsilon = round(random.choice(Constants.epsilon_value, p=Constants.probs),2)
+
 
     # starts payoff calculation
 
@@ -241,7 +244,7 @@ class Group(BaseGroup):
             money_to_agent = self.agent_piece_rate*(self.Hum_effort+self.epsilon)+ self.agent_fixed_pay
             agent.payoff = money_to_agent - 0.5 * (self.Hum_effort**(2))
             random_seed = random.random()
-            principal.payoff = (self.total_return - money_to_agent)
+            principal.payoff = Constants.reserve + (self.total_return - money_to_agent)
 
 
         else:
@@ -254,7 +257,7 @@ class Group(BaseGroup):
                 self.robot_effort = self.agent_piece_rate
                 self.total_return_Hum_P_vs_robot = self.return_from_effort(self.robot_effort)
                 money_to_robot_agent = self.agent_piece_rate*(self.robot_effort+self.epsilon)+ self.agent_fixed_pay
-                principal.payoff= (self.total_return_Hum_P_vs_robot - money_to_robot_agent)
+                principal.payoff=Constants.reserve  +  (self.total_return_Hum_P_vs_robot - money_to_robot_agent)
 
             else:
                 self.total_return_Hum_P_vs_robot = 0
@@ -273,19 +276,12 @@ class Group(BaseGroup):
             if agent.contract_game_payoff < 0:
                 agent.contract_game_payoff = 0
             agent.participant.payoff = agent.contract_game_payoff + agent.participant.vars['pl_mpl_payoff']
-
             principal = self.get_player_by_role('principal')
             principal.contract_game_payoff = principal.in_round(self.realized_rounds_1).payoff + principal.in_round(
                 self.realized_rounds_2).payoff
-            if principal.contract_game_payoff <= 50:
-                if principal.contract_game_payoff <= 0:
-                    principal.participant.payoff = Constants.low_payoff + principal.participant.vars['pl_mpl_payoff']
-                else:
-                    principal.participant.payoff = rdm.choice([Constants.high_payoff, Constants.low_payoff],
-                        p=[float(principal.contract_game_payoff) / 50, 1 - float(principal.contract_game_payoff) / 50]
-                                                              ) + principal.participant.vars['pl_mpl_payoff']
-            else:
-                principal.participant.payoff = Constants.high_payoff + principal.participant.vars['pl_mpl_payoff']
+            if principal.contract_game_payoff < 0:
+                principal.contract_game_payoff = 0
+            principal.participant.payoff = principal.contract_game_payoff + principal.participant.vars['pl_mpl_payoff']
 
 
 
@@ -344,10 +340,20 @@ class Player(BasePlayer):
         )
 
 
-    social_media_time_spend = models.IntegerField(
+    social_media_time_spend = models.StringField(
         label= 'Дополнительно просим ответить на 2 следующих вопроса (информация о ваших ответах, только на эти два '
               'вопроса будет доступна другим участникам). '
-              'Укажите приблизительное колличество стран, которое вы посетили?', min = 0, max = 100)
+              'Укажите приблизительное колличество стран, которое вы посетили?',
+        choices=[['0-1', '0-1'],
+                 ['1-2', '1-2'],
+                 ['более 2', 'более 2'],
+                 ]
+        )
 
-    numb_of_last_books = models.IntegerField(
-        label='укажите приблизительное колличество книг, прочитанных вами за последние три месяца', min = 0, max = 20)
+    numb_of_last_books = models.StringField(
+        label='укажите приблизительное колличество книг, прочитанных вами за последние три месяца',
+        choices=[['0-1', '0-1'],
+                 ['1-2', '1-2'],
+                 ['более 2', 'более 2'],
+                 ]
+        )

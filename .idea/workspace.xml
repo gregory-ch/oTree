@@ -3,7 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="929e0447-8903-473a-bddd-2eff4496aa95" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contracts_H_vs_R/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/contracts_H_vs_R/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/contracts_H_vs_R/pages.py" beforeDir="false" afterPath="$PROJECT_DIR$/contracts_H_vs_R/pages.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contracts_H_vs_R/templates/contracts_H_vs_R/Offer.html" beforeDir="false" afterPath="$PROJECT_DIR$/contracts_H_vs_R/templates/contracts_H_vs_R/Offer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contracts_H_vs_R/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/contracts_H_vs_R/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mpl/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/mpl/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mpl/templates/mpl/Decision.html" beforeDir="false" afterPath="$PROJECT_DIR$/mpl/templates/mpl/Decision.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_survey/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_survey/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_survey/pages.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_survey/pages.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_survey/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_survey/tests.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trainsrisk-master/trains/__init__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/trainsrisk-master/trains/_builtin/__init__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/trainsrisk-master/trains/models.py" beforeDir="false" />
@@ -127,7 +136,9 @@
       <workItem from="1576827741539" duration="4410000" />
       <workItem from="1576842097600" duration="1497000" />
       <workItem from="1577092486525" duration="6150000" />
-      <workItem from="1577357104568" duration="255000" />
+      <workItem from="1577357104568" duration="973000" />
+      <workItem from="1580993780026" duration="704000" />
+      <workItem from="1581505453568" duration="10208000" />
     </task>
     <servers />
   </component>

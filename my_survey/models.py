@@ -55,6 +55,9 @@ class Player(BasePlayer):
     feedback_3 = models.StringField(
         label='О чем по вашему был этот эксперимент?')
 
+    feedback_4 = models.StringField(
+        label='чем вы руководствовались при выборе переменной и постоянной выплат (усилий), пользовались ли вы какой-либо стратегией?')
+
     wage = models.IntegerField(
         label='Ваш средний месячный доход, 0 если неприменимо',
         min=0, max=150000)
@@ -79,6 +82,8 @@ class Player(BasePlayer):
         label='Считаете ли вы, что большинству людей можно доверять или что в отношениях с людьми всегда надо быть'
               ' осторожным?',
         widget=widgets.RadioSelect)
+
+
 
     max_satisf_min_1 = models.IntegerField(
         choices=[1, 2, 3, 4, 5, 6, 7],
