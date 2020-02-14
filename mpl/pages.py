@@ -172,5 +172,5 @@ page_sequence = [Decision]
 if Constants.instructions:
     page_sequence.insert(0, Instructions)
 
-if Constants.results:
-    page_sequence.append(Results)
+# if Constants.results:
+#     page_sequence.append(Results)

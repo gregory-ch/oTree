@@ -100,10 +100,10 @@
         </table>
     </div>
 <p> Для финальных выплат были выбраны: раунд {{group.realized_rounds_1}} и раунд {{group.realized_rounds_2}} </p>
-    {% if player.role == 'principal'  %}
-        Компьютер выбрал выигрыш за этап 2: {{lottery}}
-    {% endif %}
-<p> Ваш выигрыш за всю сессию, без учета платы за участие составил: {{participant.payoff}}  </p>
+
+        Ваш выигрыш за первый этап составил: {{lottery}}
+
+<p> Ваш выигрыш за всю сессию, составил: {{participant.payoff}}  </p>
 {% endif %}
 
 

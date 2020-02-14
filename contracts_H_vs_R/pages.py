@@ -25,43 +25,38 @@ class IntroductionWaitPage(WaitPage):
         self.group.set_swicher()
 
 
-
-
-class Introduction(Page):
-    def is_displayed(self):
-        return  self.round_number == 1
-
 class question(Page):
     def is_displayed(self):
         return  self.round_number == 1
     form_model = 'player'
     form_fields = ['social_media_time_spend', 'numb_of_last_books']
 
+class Introduction(Page):
+    def is_displayed(self):
+        return  self.round_number == 1
+
+
+
 class quiz (Page):
     def is_displayed(self):
         return self.round_number == 1
 
     form_model = 'player'
-    form_fields = ['task_1', 'task_2','task_3','task_4','task_5','task_6',]
+    form_fields = ['task_1', 'task_2','task_4','task_5','task_6',]
 
     def task_1_error_message(self, value):
         print('value is', value)
-        if value  != '40':
+        if value  != '55':
             return 'пожалуйста проверьте правильность введнного ответа, поднимите руку после третьей ' \
                    'попытки ввода неверного значения'
 
     def task_2_error_message(self, value):
         print('value is', value)
-        if value  != '15':
+        if value  != '25':
             return 'пожалуйста проверьте правильность введнного ответа, поднимите руку после третьей' \
                    'попытки ввода неверного значения'
 
 
-    def task_3_error_message(self, value):
-        print('value is', value)
-        if value  != '0.4':
-            return 'пожалуйста проверьте правильность введнного ответа, поднимите руку после третьей' \
-                   'попытки ввода неверного значения'
 
     def task_4_error_message(self, value):
         print('value is', value)
@@ -72,7 +67,7 @@ class quiz (Page):
 
     def task_5_error_message(self, value):
         print('value is', value)
-        if value != '470':
+        if value != '410':
             self.player.numb_errors = 1
             return 'пожалуйста проверьте правильность введнного ответа, поднимите руку после третьей' \
                    'попытки ввода неверного значения'
@@ -121,9 +116,9 @@ class Offer(Page):
 class OfferWaitPage(WaitPage):
     def vars_for_template(self):
         if self.player.role() == 'agent':
-            body_text = "Вы Участник 2, ожидайте пока Участник 1 предложит вам контракт."
+            body_text = "Ваша роль Исполнитель, ожидайте пока Заказчик составит для Вас условия контракта."
         else:
-            body_text = "Ожидайте Участника 2."
+            body_text = "Ожидайте Участника в роли Исполнителя."
         return {'body_text': body_text}
 
 
@@ -168,7 +163,7 @@ class Results(Page):
              for i in range(1, Constants.num_rounds+1):
                  a.append(i)
                  b.append(self.player.in_round(i).payoff)
-             lottery = self.player.participant.payoff - self.player.participant.vars['pl_mpl_payoff']
+             lottery = self.player.participant.vars['pl_mpl_payoff']
              return dict(lottery = lottery, payset = zip(a, b,) )
 
 
@@ -179,8 +174,8 @@ class Results(Page):
 
 page_sequence = [PreWaitPage,
                  IntroductionWaitPage,
-                 Introduction,
                  question,
+                 Introduction,
                  quiz,
                  IntroductionWaitPage2,
                  Offer,

@@ -8,13 +8,38 @@
 {% block content %}
 
     <p>
-        Вы <strong> Участник 1 </strong>.
+        Вы <strong> Участник в роли Заказчика  </strong>.
 
         В предыдущей игре вам предлагался выбор из варианта A и варианта Б в десяти лотереях.
         Участник 2 совершил выбор в идентичных с Вами условиях, номер лотереи в которой Участник 2 переключился с лотереи А
         на лотерею Б, отражает его предпочтения.
 
-    {{ form.viewed_risk_preff.errors }}
+
+    <p><b>
+       Информация о колличестве стран которое посетил другой участник в группе</b></p>
+
+
+    <div class="custom-control custom-radio2">
+      <input type="radio" id="customRadio11" name="viewed_social_media_time_spend" class="custom-control-input2"
+             data-toggle="collapse" href="#collapseExample2" value = 1>
+      <label class="custom-control-label2" for="customRadio11">Просмотреть информацию</label>
+    </div>
+    <div class="custom-control custom-radio">
+      <input type="radio" id="customRadio21" name="viewed_social_media_time_spend" class="custom-control-input2" value = 0>
+      <label class="custom-control-label2" for="customRadio21">Оставить непросмотренной</label>
+    </div>
+
+
+
+
+    <div class="collapse" id="collapseExample2">
+        <p> Участник 2 посетил  приблизительно {{ group.agent_social_media_time_spend  }} стран.   </p>
+     </div>
+
+        {{ form.viewed_social_media_time_spend.errors }}
+
+
+        {{ form.viewed_risk_preff.errors }}
 
     <label class="col-form-label">
     <b>Информация о предпочтениях из этапа 1 другого участника в группе</b>
@@ -172,29 +197,6 @@
     </div>
 
     <p>    </p>
-    <p><b>
-       Информация о колличестве стран которое посетил другой участник в группе</b></p>
-
-
-    <div class="custom-control custom-radio2">
-      <input type="radio" id="customRadio11" name="viewed_social_media_time_spend" class="custom-control-input2"
-             data-toggle="collapse" href="#collapseExample2" value = 1>
-      <label class="custom-control-label2" for="customRadio11">Просмотреть информацию</label>
-    </div>
-    <div class="custom-control custom-radio">
-      <input type="radio" id="customRadio21" name="viewed_social_media_time_spend" class="custom-control-input2" value = 0>
-      <label class="custom-control-label2" for="customRadio21">Оставить непросмотренной</label>
-    </div>
-
-
-
-
-    <div class="collapse" id="collapseExample2">
-        <p> Участник 2 посетил  приблизительно {{ group.agent_social_media_time_spend  }} стран.   </p>
-     </div>
-
-        {{ form.viewed_social_media_time_spend.errors }}
-
 
         <p><b>Информация о количестве прочитанных книг, которые другой участник в группе
             прочел в течении последних 3-х месяцев</b></p>
@@ -226,7 +228,7 @@
         {{ Constants.min_fixed_payment }} до  {{ Constants.max_fixed_payment }}.
     </p>
 
-    {% formfield group.agent_piece_rate label='Переменная выплата' %} Фиксированная выплата должна быть в интервале от 0 до 10
+    {% formfield group.agent_piece_rate label='Переменная выплата' %} Переменная выплата должна быть в интервале от 0 до 10
 
     <p>{% formfield group.expected_efforts label='Сколько усилий Вы ожидаете будет приложено Участником 2 в данном раунде' %}
     </p>
