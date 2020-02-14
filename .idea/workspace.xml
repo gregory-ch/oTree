@@ -3,13 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="929e0447-8903-473a-bddd-2eff4496aa95" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contracts_H_vs_R/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/contracts_H_vs_R/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/contracts_H_vs_R/pages.py" beforeDir="false" afterPath="$PROJECT_DIR$/contracts_H_vs_R/pages.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/contracts_H_vs_R/templates/contracts_H_vs_R/Accept.html" beforeDir="false" afterPath="$PROJECT_DIR$/contracts_H_vs_R/templates/contracts_H_vs_R/Accept.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/contracts_H_vs_R/templates/contracts_H_vs_R/Offer.html" beforeDir="false" afterPath="$PROJECT_DIR$/contracts_H_vs_R/templates/contracts_H_vs_R/Offer.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/contracts_H_vs_R/templates/contracts_H_vs_R/Results.html" beforeDir="false" afterPath="$PROJECT_DIR$/contracts_H_vs_R/templates/contracts_H_vs_R/Results.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mpl/pages.py" beforeDir="false" afterPath="$PROJECT_DIR$/mpl/pages.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mpl/templates/mpl/Instructions.html" beforeDir="false" afterPath="$PROJECT_DIR$/mpl/templates/mpl/Instructions.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trainsrisk-master/trains/__init__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/trainsrisk-master/trains/_builtin/__init__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/trainsrisk-master/trains/models.py" beforeDir="false" />
@@ -135,7 +134,7 @@
       <workItem from="1577092486525" duration="6150000" />
       <workItem from="1577357104568" duration="973000" />
       <workItem from="1580993780026" duration="704000" />
-      <workItem from="1581505453568" duration="17569000" />
+      <workItem from="1581505453568" duration="20664000" />
     </task>
     <servers />
   </component>
