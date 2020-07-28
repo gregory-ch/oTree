@@ -74,10 +74,10 @@ SESSION_CONFIGS = [
     #     'app_sequence': ['bret'],
     #     },
 {
-        'name': 'roshambo',
-        'display_name': "roshambo",
+        'name': 'roshambo_single',
+        'display_name': "roshambo_single",
         'num_demo_participants': 1,
-        'app_sequence': ['roshambo'],
+        'app_sequence': ['roshambo_single'],
         },
 
     #

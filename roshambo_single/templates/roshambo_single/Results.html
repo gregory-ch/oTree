@@ -1,0 +1,29 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+   Результаты раунда
+{% endblock %}
+
+{% block content %}
+<p>
+        Компьютер выбрал <strong>{{ player.comp_move_text }}</strong>,
+            </p>
+<p>
+        В этом раунде Вы  <strong>{{ player.result_text }}</strong>,
+            </p>
+<p>
+        Ваш счет за все раунды  <strong> {{ cumulative_hum_payoff }} </strong>,
+            </p>
+<p>
+        Счет компьютера за все раунды <strong> {{ player.cum_payoff_comp_second }} </strong>,
+            </p>
+<p>
+        Текущий номер раунда <strong>  {{a}} </strong>,
+        </p>
+    {% next_button %}
+
+{% include 'roshambo_single/Instructions.html' %}
+{% endblock %}
+
+
