@@ -43,12 +43,21 @@ SESSION_CONFIGS = [
     # 'app_sequence': ['principal_agent', 'payment_info'],
     # },
 
+
+
     {
-        'name': 'color_table',
-        'display_name': "color_table",
+        'name': 'trains',
+        'display_name': "trains",
         'num_demo_participants': 10,
-        'app_sequence': ['color_table']
+        'app_sequence': ['trains']
     },
+
+    # {
+    #     'name': 'color_table',
+    #     'display_name': "color_table",
+    #     'num_demo_participants': 10,
+    #     'app_sequence': ['color_table']
+    # },
     {
         'name': 'Contracts_H_VS_R',
         'display_name': "Contracts_H_VS_R",
@@ -64,6 +73,12 @@ SESSION_CONFIGS = [
     #     'num_demo_participants': 1,
     #     'app_sequence': ['bret'],
     #     },
+{
+        'name': 'roshambo',
+        'display_name': "roshambo",
+        'num_demo_participants': 1,
+        'app_sequence': ['roshambo'],
+        },
 
     #
 ]
@@ -142,26 +157,26 @@ INSTALLED_APPS = ['otree']
 ###     'app_sequence': ['ultimatum', 'payment_info'],
 ###     'use_strategy_method': False,
 ### },
-### {
-###     'name': 'vickrey_auction',
-###     'display_name': "Vickrey Auction",
-###     'num_demo_participants': 3,
-###     'app_sequence': ['vickrey_auction', 'payment_info'],
-### },
+# {
+#     'name': 'vickrey_auction',
+#     'display_name': "Vickrey Auction",
+#     'num_demo_participants': 3,
+#     'app_sequence': ['vickrey_auction', 'payment_info'],
+# },
 ### {
 ###     'name': 'volunteer_dilemma',
 ###     'display_name': "Volunteer's Dilemma",
 ###     'num_demo_participants': 3,
 ###     'app_sequence': ['volunteer_dilemma', 'payment_info'],
 ### },
-### {
-###     'name': 'cournot',
-###     'display_name': "Cournot Competition",
-###     'num_demo_participants': 2,
-###     'app_sequence': [
-###         'cournot', 'payment_info'
-###     ],
-### },
+# {
+#     'name': 'cournot',
+#     'display_name': "Cournot Competition",
+#     'num_demo_participants': 2,
+#     'app_sequence': [
+#         'cournot', 'payment_info'
+#     ],
+# },
 ###
 ### {
 ###     'name': 'dictator',
@@ -177,32 +192,32 @@ INSTALLED_APPS = ['otree']
 ###         'matching_pennies',
 ###     ],
 ### },
-### {
-###     'name': 'traveler_dilemma',
-###     'display_name': "Traveler's Dilemma",
-###     'num_demo_participants': 2,
-###     'app_sequence': ['traveler_dilemma', 'payment_info'],
-### },
-### {
-###     'name': 'bargaining',
-###     'display_name': "Bargaining Game",
-###     'num_demo_participants': 2,
-###     'app_sequence': ['bargaining', 'payment_info'],
-### },
-### {
-###     'name': 'common_value_auction',
-###     'display_name': "Common Value Auction",
-###     'num_demo_participants': 3,
-###     'app_sequence': ['common_value_auction', 'payment_info'],
-### },
-### {
-###     'name': 'bertrand',
-###     'display_name': "Bertrand Competition",
-###     'num_demo_participants': 2,
-###     'app_sequence': [
-###         'bertrand', 'payment_info'
-###     ],
-### },
+# {
+#     'name': 'traveler_dilemma',
+#     'display_name': "Traveler's Dilemma",
+#     'num_demo_participants': 2,
+#     'app_sequence': ['traveler_dilemma', 'payment_info'],
+# },
+# {
+#     'name': 'bargaining',
+#     'display_name': "Bargaining Game",
+#     'num_demo_participants': 2,
+#     'app_sequence': ['bargaining', 'payment_info'],
+# },
+# {
+#     'name': 'common_value_auction',
+#     'display_name': "Common Value Auction",
+#     'num_demo_participants': 3,
+#     'app_sequence': ['common_value_auction', 'payment_info'],
+# },
+# {
+#     'name': 'bertrand',
+#     'display_name': "Bertrand Competition",
+#     'num_demo_participants': 2,
+#     'app_sequence': [
+#         'bertrand', 'payment_info'
+#     ],
+# },
 ### {
 ###     'name': 'real_effort',
 ###     'display_name': "Real-effort transcription task",
@@ -211,14 +226,14 @@ INSTALLED_APPS = ['otree']
 ###         'real_effort',
 ###     ],
 ### },
-### {
-###     'name': 'lemon_market',
-###     'display_name': "Lemon Market Game",
-###     'num_demo_participants': 3,
-###     'app_sequence': [
-###         'lemon_market', 'payment_info'
-###     ],
-### },
+# {
+#     'name': 'lemon_market',
+#     'display_name': "Lemon Market Game",
+#     'num_demo_participants': 3,
+#     'app_sequence': [
+#         'lemon_market', 'payment_info'
+#     ],
+# },
 ### {
 ###     'name': 'public_goods_simple',
 ###     'display_name': "Public Goods (simple version from tutorial)",

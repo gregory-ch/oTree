@@ -1,0 +1,19 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    Выберете одно из действий
+{% endblock %}
+
+{% block content %}
+<p>
+    Бумага побеждает камень («бумага накрывает камень»).
+    Камень побеждает ножницы («камень затупляет или ломает ножницы»).
+    Ножницы побеждают бумагу («ножницы разрезают бумагу»).
+
+    </p>
+
+{% formfield group.hum_move %}
+    {% next_button %}
+
+{% endblock %}

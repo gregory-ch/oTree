@@ -3,12 +3,30 @@
   <component name="ChangeListManager">
     <list default="true" id="929e0447-8903-473a-bddd-2eff4496aa95" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contracts_H_vs_R/pages.py" beforeDir="false" afterPath="$PROJECT_DIR$/contracts_H_vs_R/pages.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contracts_H_vs_R/templates/contracts_H_vs_R/Accept.html" beforeDir="false" afterPath="$PROJECT_DIR$/contracts_H_vs_R/templates/contracts_H_vs_R/Accept.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contracts_H_vs_R/templates/contracts_H_vs_R/Offer.html" beforeDir="false" afterPath="$PROJECT_DIR$/contracts_H_vs_R/templates/contracts_H_vs_R/Offer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contracts_H_vs_R/templates/contracts_H_vs_R/Results.html" beforeDir="false" afterPath="$PROJECT_DIR$/contracts_H_vs_R/templates/contracts_H_vs_R/Results.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/__temp_migrations/auth/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/__temp_migrations/auth/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/__temp_migrations/color_table/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/__temp_migrations/color_table/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/__temp_migrations/contenttypes/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/__temp_migrations/contenttypes/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/__temp_migrations/contracts_H_vs_R/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/__temp_migrations/contracts_H_vs_R/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/__temp_migrations/contracts_H_vs_R/0002_auto_20190724_1727.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/__temp_migrations/contracts_H_vs_R/0003_auto_20191011_2259.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/__temp_migrations/guess_two_thirds/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/__temp_migrations/guess_two_thirds/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/__temp_migrations/guess_two_thirds/0002_auto_20190807_1155.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/__temp_migrations/mpl/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/__temp_migrations/mpl/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/__temp_migrations/my_survey/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/__temp_migrations/my_survey/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/__temp_migrations/my_survey/0002_auto_20190807_1155.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/__temp_migrations/otree/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/__temp_migrations/otree/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/__temp_migrations/payment_info/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/__temp_migrations/payment_info/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/__temp_migrations/public_goods/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/__temp_migrations/public_goods/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/__temp_migrations/quiz/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/__temp_migrations/quiz/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/__temp_migrations/sessions/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/__temp_migrations/sessions/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/__temp_migrations/survey/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/__temp_migrations/survey/__init__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mpl/templates/mpl/Instructions.html" beforeDir="false" afterPath="$PROJECT_DIR$/mpl/templates/mpl/Instructions.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trains/static/js/src/difficulty.js" beforeDir="false" afterPath="$PROJECT_DIR$/trains/static/js/src/difficulty.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trains/static/js/src/train.js" beforeDir="false" afterPath="$PROJECT_DIR$/trains/static/js/src/train.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trainsrisk-master/trains/__init__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/trainsrisk-master/trains/_builtin/__init__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/trainsrisk-master/trains/models.py" beforeDir="false" />
@@ -81,6 +99,35 @@
       </list>
     </option>
   </component>
+  <component name="RunManager">
+    <configuration name="models" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="oTree" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/roshambo" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/roshambo/models.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.models" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -134,7 +181,12 @@
       <workItem from="1577092486525" duration="6150000" />
       <workItem from="1577357104568" duration="973000" />
       <workItem from="1580993780026" duration="704000" />
-      <workItem from="1581505453568" duration="20664000" />
+      <workItem from="1581505453568" duration="21127000" />
+      <workItem from="1581793149243" duration="727000" />
+      <workItem from="1585023700399" duration="1041000" />
+      <workItem from="1585731708586" duration="3664000" />
+      <workItem from="1587308934200" duration="3126000" />
+      <workItem from="1595939741911" duration="2684000" />
     </task>
     <servers />
   </component>
@@ -153,5 +205,19 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/oTree$models.coverage" NAME="models Coverage Results" MODIFIED="1595941470252" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/roshambo" />
   </component>
 </project>

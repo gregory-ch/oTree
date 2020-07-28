@@ -1,0 +1,16 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    Результаты раунда
+{% endblock %}
+
+{% block content %}
+<p>
+        Компьютер выбрал <strong>{{ group.comp_move_text }}</strong>,
+        В этом раунде Вы  <strong>{{ group.result_text }}</strong>,
+        </p>
+    {% next_button %}
+{% endblock %}
+
+

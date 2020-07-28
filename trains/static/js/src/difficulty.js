@@ -3,6 +3,7 @@ import p5 from "./p5";
 import {Bubble} from './bubble';
 import {Arc, ChoosableArc} from './arc';
 import *  as c from './constants';
+import jspsych from "./jspsych";
 
 let bubble,
     arc;
@@ -26,6 +27,7 @@ const s = (p) => {
         arc.display();
     };
     p.mousePressed = function () {
+        jspsych(new Date());
         bubble.clicked();
         arc.clicked();
     };
