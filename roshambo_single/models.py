@@ -14,8 +14,9 @@ Your app description
 class Constants(BaseConstants):
     name_in_url = 'roshambo_single'
     players_per_group = None
-    num_rounds = 10
+    num_rounds = 100
     beta = 0.2
+    instructions_template = 'roshambo_single/instructions.html'
 
 class Subsession(BaseSubsession):
     pass

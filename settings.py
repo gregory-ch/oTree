@@ -77,7 +77,7 @@ SESSION_CONFIGS = [
         'name': 'roshambo_single',
         'display_name': "roshambo_single",
         'num_demo_participants': 1,
-        'app_sequence': ['roshambo_single'],
+        'app_sequence': ['roshambo_single','survey_rps'],
         },
 
     #

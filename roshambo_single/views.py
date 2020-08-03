@@ -3,6 +3,9 @@ from . import models
 from ._builtin import Page, WaitPage
 from .models import Constants
 
+class Introduction(Page):
+    def is_displayed(self):
+        return  self.round_number == 1
 
 class decision(Page):
 
@@ -28,7 +31,7 @@ class decision(Page):
 
 class Results(Page):
     form_model = 'player'
-
+    timeout_seconds = 45
     # def before_next_page(self):
     #     self.player.cum_result_solver()
     #     self.player.cum_result_solver_second()
@@ -38,6 +41,7 @@ class Results(Page):
         return {'a': self.round_number,'cumulative_hum_payoff' :  sum([p.cum_payoff_hum for p in self.player.in_all_rounds()])}
 
 page_sequence = [
+    Introduction,
     decision,
     Results
 ]
