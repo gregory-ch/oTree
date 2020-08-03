@@ -16,7 +16,7 @@ class Constants(BaseConstants):
     players_per_group = None
     num_rounds = 100
     beta = 0.2
-    instructions_template = 'Instructions.html'
+    instructions_template = 'roshambo_single/Instructions.html'
 
 class Subsession(BaseSubsession):
     pass
