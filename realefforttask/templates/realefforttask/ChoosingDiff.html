@@ -1,0 +1,41 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Выберите уровень сложности
+{% endblock %}
+
+{% block content %}
+
+    <table class="table table-striped">
+        <thead>
+        <th class="text-center">Размер матрицы:</th>
+        <th class="text-center">Выигрыш за правильный ответ:</th>
+        <th  class="text-center">Ваш выбор</th>
+        </thead>
+        <tbody>
+        {% for i, j in data %}
+            <tr>
+                <td class="text-center">{{ i.get_difficulty_level }}</td>
+                <td class="text-center">{{ i.get_fee }}</td>
+                <td class="text-center">{{ j.tag }}</td>
+            </tr>
+
+
+        {% endfor %}
+        </tbody>
+    </table>
+
+    {% next_button %}
+
+{% endblock %}
+
+
+{% block styles %}
+    <style>
+    .form-check-input{
+        margin-left:0px;
+    }
+    </style>
+{% endblock %}
+

@@ -140,7 +140,7 @@ class Task(djmodels.Model):
     class Meta:
         ordering = ['updated_at']
 
-    player = djmodels.ForeignKey(to=Player, on_delete='tasks')
+    player = djmodels.ForeignKey(to=Player, related_name='tasks', on_delete = '')
     difficulty = models.IntegerField(doc='difficulty level')
     body = models.LongStringField(doc='task body - just in case')
     correct_answer = models.IntegerField(doc='right answer')

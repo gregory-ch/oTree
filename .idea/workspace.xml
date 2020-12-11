@@ -2,6 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="929e0447-8903-473a-bddd-2eff4496aa95" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/risk_real_effort-master/realefforttask/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/risk_real_effort-master/realefforttask/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trainsrisk-master/trains/__init__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/trainsrisk-master/trains/_builtin/__init__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/trainsrisk-master/trains/models.py" beforeDir="false" />
@@ -21,7 +25,6 @@
       <change beforePath="$PROJECT_DIR$/trainsrisk-master/trains/templates/trains/Task.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/trainsrisk-master/trains/tests.py" beforeDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,10 +52,16 @@
   </component>
   <component name="ProjectId" id="1SBm7vnYQ5sKNVNBdY7rHr0TcUN" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/roshambo_single/templates/roshambo_single" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
@@ -62,18 +71,6 @@
       <recent name="C:\Users\chashire\oTree\roshambo_single\templates\roshambo_single" />
       <recent name="C:\Users\chashire\oTree\contracts_H_vs_R\templates\contracts_H_vs_R" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager">
     <configuration name="models" type="PythonConfigurationType" factoryName="Python" temporary="true">
@@ -164,24 +161,25 @@
       <workItem from="1587308934200" duration="3126000" />
       <workItem from="1595939741911" duration="13487000" />
       <workItem from="1605783923854" duration="18000" />
+      <workItem from="1607700823977" duration="16000" />
+      <workItem from="1607700853994" duration="3855000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -80,6 +80,12 @@ SESSION_CONFIGS = [
         'app_sequence': ['roshambo_single','survey_rps'],
         },
 
+    {
+        'name': 'realefforttask',
+        'display_name': "Realefforttask",
+        'num_demo_participants': 1,
+        'app_sequence': ['realefforttask'],
+    }
     #
 ]
 # see the end of this file for the inactive session configs
