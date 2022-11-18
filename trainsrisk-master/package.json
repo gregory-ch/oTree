@@ -28,7 +28,7 @@
     "babel-preset-env": "^1.7.0",
     "webpack": "^4.39.3",
     "webpack-bundle-tracker": "^0.4.2-beta",
-    "webpack-cli": "^3.3.7"
+    "webpack-cli": "^3.3.12"
   },
   "dependencies": {
     "script-loader": "^0.7.2"
